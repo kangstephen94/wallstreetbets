@@ -1,0 +1,51 @@
+.splash {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.splash-banner {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  background-color: black;
+  color: pink;
+  justify-content: center;
+  height: 50px;
+
+}
+
+.splash-nav {
+  display: flex;
+}
+
+#header-img {
+  width: 10px;
+  height: 10px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 900;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.links li {
+  color: #21ce99;
+}
+
+
+.links li:hover {
+  color: #1ae9aa;
+  background-color: transparent;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.container h1 {
+  font-size: 50px;
+}
