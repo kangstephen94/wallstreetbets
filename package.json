@@ -29,8 +29,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -d --watch"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -44,5 +43,9 @@
   "homepage": "https://github.com/kangstephen94/wallstreetbets#readme",
   "devDependencies": {
     "babel-plugin-recharts": "^1.1.1"
+  },
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
   }
 }

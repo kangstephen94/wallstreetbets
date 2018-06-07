@@ -26,12 +26,12 @@ class signupForm extends React.Component {
   hover () {
     const element = document.getElementById('my-img');
     console.log(element);
-    element.setAttribute('src', '/assets/wallstreet-hover.jpg');
+    element.setAttribute('src', 'https://image.ibb.co/dt16oT/wallstreet_hover.png');
   }
 
   unhover() {
     const element = document.getElementById('my-img');
-    element.setAttribute('src', '/assets/wallstreet.jpg');
+    element.setAttribute('src', 'https://image.ibb.co/gzyVF8/wallstreet.png');
   }
 
   renderErrors() {
@@ -53,7 +53,7 @@ class signupForm extends React.Component {
       <div className='signupcontainer'>
       <form className='signupform' onSubmit={(e) => this.handleSubmit(e)}>
         <div className='signuptitle'>
-          <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
+          <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
           <div className='create-new-user'>Sign up and start trading!</div>
         </div>
         <label className='firstname'>

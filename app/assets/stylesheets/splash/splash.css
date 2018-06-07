@@ -179,22 +179,26 @@ a:link {
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   margin: auto;
   margin-top: 150px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  height: 200px;
   width: 1000px;
 }
 
-.footer a {
+.footer a img {
   display: block;
-  width: 30px;
-  height: 50px;
   margin: auto;
+  height: 25px;
+  width: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  margin: auto;
+  padding: 100px 0;
 }
 
 @keyframes fadein {

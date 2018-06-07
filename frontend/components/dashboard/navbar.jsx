@@ -15,12 +15,12 @@ class NavBar extends React.Component {
   hover () {
     const element = document.getElementById('my-img');
     console.log(element);
-    element.setAttribute('src', '/assets/wallstreet-hover.jpg');
+    element.setAttribute('src', 'https://image.ibb.co/dt16oT/wallstreet_hover.png');
   }
 
   unhover() {
     const element = document.getElementById('my-img');
-    element.setAttribute('src', '/assets/wallstreet.jpg');
+    element.setAttribute('src', 'https://image.ibb.co/gzyVF8/wallstreet.png');
   }
 
   render () {
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
       <div className="splash">
         <div className="splash-nav">
           <div className="splash-nav-content">
-          <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
+          <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
           <ul className="links">
             <li>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>
