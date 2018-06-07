@@ -45,7 +45,7 @@
     "babel-plugin-recharts": "^1.1.1"
   },
   "engines": {
-    "node": "8.4.0",
+    "node": "6.10.1",
     "npm": "6.1.0"
   }
 }
