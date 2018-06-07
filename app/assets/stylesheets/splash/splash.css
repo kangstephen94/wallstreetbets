@@ -1,5 +1,5 @@
 .splash {
-  padding-bottom: 300px;
+  padding-bottom: 150px;
 }
 
 
@@ -20,6 +20,11 @@
 }
 
 .splash-nav img {
+  width: 120px;
+  height: 120px;
+}
+
+.splash-nav img:hover {
   width: 120px;
   height: 120px;
 }
@@ -63,7 +68,7 @@ a:link {
   font-size: 52px;
   font-weight: 600;
   line-height: 59px;
-  -webkit-animation: fadein 2.5s;
+  -webkit-animation: fadein 3s;
 }
 
 .container h4 {
@@ -72,12 +77,12 @@ a:link {
   line-height: 30px;
   margin-top: 30px;
   letter-spacing: 0.3px;
-  -webkit-animation: fadein 3.5s;
+  -webkit-animation: fadein 4s;
 }
 
 .container a {
   display: block;
-  height: 22px;
+  height: 20px;
   width: 60px;
   border-radius: 5px;
   text-align: center;
@@ -86,10 +91,10 @@ a:link {
   color: white;
   font-weight: 900;
   font-size: 14px;
-  padding: 14px 16px;
+  padding: 14px 14px;
   margin: 0;
   margin-top: 30px;
-  -webkit-animation: fadein 4s;
+  -webkit-animation: fadein 4.7s;
 }
 
 .container a:hover {
@@ -150,7 +155,7 @@ a:link {
   justify-content: space-between;
   width: 70%;
   margin: auto;
-  margin-top: 330px;
+  margin-top: 350px;
   font-family: "DIN Pro", "DIN Web", sans-serif;
 }
 
@@ -172,12 +177,32 @@ a:link {
 .text3 {
   width: 55%;
 }
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 150px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 200px;
+  width: 1000px;
+}
+
+.footer a {
+  display: block;
+  width: 30px;
+  height: 50px;
+  margin: auto;
 }
 
 @keyframes fadein {
-  from {opacity: 0}
-  to   {opacity: 1; }
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

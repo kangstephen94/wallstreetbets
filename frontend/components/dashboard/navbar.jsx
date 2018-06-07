@@ -12,6 +12,16 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  hover () {
+    const element = document.getElementById('my-img');
+    console.log(element);
+    element.setAttribute('src', '/assets/wallstreet-hover.jpg');
+  }
+
+  unhover() {
+    const element = document.getElementById('my-img');
+    element.setAttribute('src', '/assets/wallstreet.jpg');
+  }
 
   render () {
     const {currentUser} = this.props;
@@ -19,7 +29,7 @@ class NavBar extends React.Component {
       <div className="splash">
         <div className="splash-nav">
           <div className="splash-nav-content">
-          <img src='/assets/wallstreet.jpg'/>
+          <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
           <ul className="links">
             <li>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>

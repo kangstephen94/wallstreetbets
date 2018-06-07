@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label } from 'recharts';
 
@@ -6,6 +7,17 @@ class Splash extends React.Component  {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  hover () {
+    const element = document.getElementById('my-img');
+    console.log(element);
+    element.setAttribute('src', '/assets/wallstreet-hover.jpg');
+  }
+
+  unhover() {
+    const element = document.getElementById('my-img');
+    element.setAttribute('src', '/assets/wallstreet.jpg');
   }
 
   handleClick (e) {
@@ -26,7 +38,7 @@ class Splash extends React.Component  {
     <div className="splash">
       <div className="splash-nav">
         <div className="splash-nav-content">
-        <img src='/assets/wallstreet.jpg'/>
+        <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
         <ul className="links">
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/signup">Sign Up</Link></li>
@@ -52,7 +64,7 @@ class Splash extends React.Component  {
         <div className='text1'>
           <h1>Investing.</h1>
           <h1>For the millenials.</h1>
-          <h4>Wallstreetbets lets you take part in the stock market for free.</h4>
+          <h4>Wallstreetbets lets you take part in the stock exchange for free.</h4>
           <Link className='signupbutton' to="/signup">Sign Up</Link>
         </div>
       </div>
@@ -70,11 +82,17 @@ class Splash extends React.Component  {
         <img className='map' src='/assets/worldmap.jpg'/>
         <div className='text3'>
           <h1>Have no fear.</h1>
-          <h3>We've designed our application to be accessible to all ages, so that the young and old alike can invest into their future.</h3>
+          <h3>We've designed our trading platform to be accessible to all ages, so that the young and old alike can invest into their future.</h3>
           <h3>It's fast, dead simple and just works.</h3>
         </div>
       </div>
 
+      <section className='footer'>
+        <a href='https://www.linkedin.com/in/hyunkang7/'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/linkedin.png"/></a>
+        <a href='https://github.com/kangstephen94'><img className='github' src="https://image.ibb.co/eGCCCo/github.png"/></a>
+        <a href='https://twitter.com/skangbangg'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/twitter.png"/></a>
+        <a href='https://www.facebook.com/stephen.kang1'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/facebook.png"/></a>
+      </section>
     </div>
   );
 }

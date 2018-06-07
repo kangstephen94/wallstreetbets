@@ -37,13 +37,112 @@ html, body {
 .loginform {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.loginform h1 {
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: 0.7px;
-  line-height: 30px;
-  margin: 0 0 16px;
-  font-family: DIN Pro,-apple-system,BlinkMacSystemFont,sans-serif;
+.logintitle {
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logintitle img {
+  width: 120px;
+  height: 120px;
+}
+
+.loginerrors {
+  color: red;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.email div {
+  font-weight: lighter;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.password div {
+  font-weight: lighter;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.logintitle h1 {
+  margin-left: 30px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #21ce99;
+}
+
+.logininput {
+  display: block;
+  margin-top: 15px;
+  width: 395px;
+  height: 48px;
+  border-radius: 5px;
+  padding-left: 15px;
+  background-color: #fafafa;
+}
+
+.logininput:hover {
+  background-color: white;
+  border: 0.5px solid #cbcbcd;
+  -webkit-animation: fadein 0.35s;
+  height: 47px;
+}
+
+
+.loginform label {
+  margin-top: 10px;
+}
+
+.signin {
+  display: block;
+  height: 20px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #21ce99;
+  color: white;
+  font-weight: 900;
+  font-size: 14px;
+  padding: 12px 12px;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.signup-redirect {
+  font-size: 14px;
+  font-weight: lighter;
+  margin-top: 15px;
+}
+
+.signup-redirect a {
+  color: #21ce99;
+  margin-left: 5px;
+}
+
+.signup-redirect a:hover {
+  color: #21ce99;
+  text-decoration: underline;
+}
+
+.signin:hover {
+  background-color: #1ae9aa;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

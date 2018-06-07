@@ -1,9 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class signupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -15,6 +21,17 @@ class signupForm extends React.Component {
     return(e) => (
       this.setState({[field]: e.target.value})
     );
+  }
+
+  hover () {
+    const element = document.getElementById('my-img');
+    console.log(element);
+    element.setAttribute('src', '/assets/wallstreet-hover.jpg');
+  }
+
+  unhover() {
+    const element = document.getElementById('my-img');
+    element.setAttribute('src', '/assets/wallstreet.jpg');
   }
 
   renderErrors() {
@@ -31,39 +48,55 @@ class signupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='signuppage'>
+      <div className='signupbackground'></div>
+      <div className='signupcontainer'>
       <form className='signupform' onSubmit={(e) => this.handleSubmit(e)}>
-        <label>First Name:
+        <div className='signuptitle'>
+          <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
+          <div className='create-new-user'>Sign up and start trading!</div>
+        </div>
+        <label className='firstname'>
         <input
+          className='createinput'
+          placeholder='First name'
           type='text'
           value={this.state.first_name}
           onChange={this.update('first_name')}
           />
       </label>
-      <br></br>
-        <label>Last Name:
+        <label className='lastname'>
         <input
+          className='createinput'
+          placeholder='Last name'
           type='text'
           value={this.state.last_name}
           onChange={this.update('last_name')}
           />
       </label>
-        <label>Email:
+        <label className='email'>
         <input
+          className='createinput'
+          placeholder='Email address'
           type='text'
           value={this.state.email}
           onChange={this.update('email')}
           />
       </label>
-        <label>Password:
+        <label className='password'>
         <input
+          className='createinput'
+          placeholder='Password (min. 6 characters)'
           type='password'
           value={this.state.password}
           onChange={this.update('password')}
           />
       </label>
-       <input type='submit' value='Create User'/>
+      <div className='signuperrors'>{this.renderErrors()}</div>
+      <div className='login-redirect'>Already have an account? <Link to='/login'>Click here to login</Link></div>
+       <input className='createuser' type='submit' value='Create User'/>
       </form>
+      </div>
     </div>
     );
   }
