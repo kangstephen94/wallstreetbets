@@ -8,7 +8,7 @@ class loginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state).then(() => this.props.history.push('/'));
+    this.props.login(this.state);
   }
 
   update(field) {
@@ -31,9 +31,11 @@ class loginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.renderErrors()}
+      <div className="loginpage">
+      <div className='loginbackground'></div>
+      <div className='logincontainer'>
       <form className='loginform' onSubmit={(e) => this.handleSubmit(e)}>
+        <h1>Welcome to WallStreetBets</h1>
         <label>Email:
         <input
           type='text'
@@ -50,6 +52,7 @@ class loginForm extends React.Component {
       </label>
        <input type='submit' value='Login'/>
       </form>
+    </div>
     </div>
     );
   }

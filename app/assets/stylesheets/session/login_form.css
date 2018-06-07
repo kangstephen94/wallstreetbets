@@ -1,0 +1,49 @@
+html, body {
+  height: 100%
+}
+
+#root {
+  height: 100%
+}
+
+.app {
+  height: 100%
+}
+
+
+.loginpage {
+ display: flex;
+ height: 100%;
+}
+
+.loginbackground {
+  display: block;
+  background-image: url(https://d2ue93q3u507c2.cloudfront.net/assets/generated_assets/94977d34f99015525dcd0fc9987fcbe6.png);
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+
+}
+
+.logincontainer {
+  display: block;
+  height: 371px;
+  margin-left: 70px;
+  margin-top: 200px;
+}
+
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginform h1 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  line-height: 30px;
+  margin: 0 0 16px;
+  font-family: DIN Pro,-apple-system,BlinkMacSystemFont,sans-serif;
+}

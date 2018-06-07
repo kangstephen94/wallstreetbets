@@ -14,7 +14,7 @@ import MainPageContainer from './mainpage';
 import {AuthRoute} from '../utils/route_util';
 
 const App = () => (
-  <div>
+  <div className='app'>
   <Switch>
     <Route exact path="/" component={MainPageContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />

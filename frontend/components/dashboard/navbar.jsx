@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -9,17 +8,26 @@ class NavBar extends React.Component {
 
   handleClick (e) {
     e.preventDefault();
+    console.log(this.props);
     this.props.logout();
   }
+
 
   render () {
     const {currentUser} = this.props;
     return (
-    <div className="navbar">
-      <p>{currentUser.first_name}</p>
-      <a href='' onClick={this.handleClick}>Logout</a>
-    </div>
-    );
+      <div className="splash">
+        <div className="splash-nav">
+          <div className="splash-nav-content">
+          <img src='/assets/wallstreet.jpg'/>
+          <ul className="links">
+            <li>{currentUser.first_name}</li>
+            <li><a href='' onClick={this.handleClick}>Logout</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      );
   }
 }
 

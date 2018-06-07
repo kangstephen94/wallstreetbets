@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import Dashboard from './dashboard/dashboard';
 
 const msp = (state, ownProps) => ({
@@ -10,7 +10,7 @@ const msp = (state, ownProps) => ({
 
 
 const MainPage = ({currentUser}) => {
-  const renderPage = currentUser ? <Dashboard /> : <Splash />;
+  const renderPage = currentUser ? <Dashboard /> : <SplashContainer />;
   return (
     renderPage
   );

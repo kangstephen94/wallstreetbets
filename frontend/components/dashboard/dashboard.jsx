@@ -3,7 +3,7 @@ import NavBarContainer from './navbar_container';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboard">
       <NavBarContainer />
     </div>
   );
