@@ -29,7 +29,8 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "start": "webpack -d --watch"
   },
   "repository": {
     "type": "git",

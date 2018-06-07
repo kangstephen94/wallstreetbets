@@ -31,7 +31,7 @@ class loginForm extends React.Component {
 
   unhover() {
     const element = document.getElementById('my-img');
-    element.setAttribute('src', '/assets/wallstreet.jpg');
+    element.setAttribute('src', 'https://image.ibb.co/gzyVF8/wallstreet.png');
   }
 
 
@@ -54,7 +54,7 @@ class loginForm extends React.Component {
         <div className='logincontainer'>
           <form className='loginform' onSubmit={(e) => this.handleSubmit(e)}>
           <div className='logintitle'>
-            <img id="my-img" src='/assets/wallstreet.jpg' onMouseOver={this.hover} onMouseOut={this.unhover} />
+            <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
             <h1>Welcome to WallStreetBets</h1>
           </div>
             <label className='email'>
