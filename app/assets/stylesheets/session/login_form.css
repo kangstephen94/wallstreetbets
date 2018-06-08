@@ -87,7 +87,7 @@ html, body {
   border-radius: 5px;
   background-color: #fafafa;
   margin:0;
-  padding:0;
+  padding-left: 15px;
 }
 
 .logininput:hover {

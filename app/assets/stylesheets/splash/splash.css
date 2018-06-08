@@ -44,7 +44,7 @@
 }
 
 
-.links li:hover {
+.links a:hover {
   color: #1ae9aa;
   background-color: transparent;
 }
@@ -58,7 +58,7 @@ a:link {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  width: 65%;
+  width: 70%;
   margin: auto;
   margin-top: 330px;
   font-family: "DIN Pro", "DIN Web", sans-serif;
@@ -177,8 +177,8 @@ a:link {
 .footer {
   margin: auto;
   margin-top: 150px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
   width: 1000px;
 }
 

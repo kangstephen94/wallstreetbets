@@ -58,7 +58,7 @@ class signupForm extends React.Component {
         </Link>
           <div className='create-new-user'>Sign up and start trading!</div>
         </div>
-        <label className='firstname'>
+        <div className='firstname'>
         <input
           className='createinput'
           placeholder='First name'
@@ -66,8 +66,8 @@ class signupForm extends React.Component {
           value={this.state.first_name}
           onChange={this.update('first_name')}
           />
-      </label>
-        <label className='lastname'>
+      </div>
+        <div className='lastname'>
         <input
           className='createinput'
           placeholder='Last name'
@@ -75,8 +75,8 @@ class signupForm extends React.Component {
           value={this.state.last_name}
           onChange={this.update('last_name')}
           />
-      </label>
-        <label className='email'>
+      </div>
+        <div className='email'>
         <input
           className='createinput'
           placeholder='Email address'
@@ -84,8 +84,8 @@ class signupForm extends React.Component {
           value={this.state.email}
           onChange={this.update('email')}
           />
-      </label>
-        <label className='password'>
+      </div>
+        <div className='password'>
         <input
           className='createinput'
           placeholder='Password (min. 6 characters)'
@@ -93,7 +93,7 @@ class signupForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           />
-      </label>
+      </div>
       <div className='signuperrors'>{this.renderErrors()}</div>
       <div className='login-redirect'>Already have an account? <Link to='/login'>Click here to login</Link></div>
        <input className='createuser' type='submit' value='Create User'/>
