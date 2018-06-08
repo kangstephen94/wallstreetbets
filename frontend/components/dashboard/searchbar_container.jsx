@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { searchAssets } from '../../actions/asset_actions';
+import { searchAssets, clearAsset} from '../../actions/asset_actions';
 import SearchBar from './searchbar';
 
 const msp = state => ({
@@ -7,7 +7,8 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-  searchAssets: query => dispatch((searchAssets(query)))
+  searchAssets: query => dispatch(searchAssets(query)),
+  clearAssets: () => dispatch(clearAsset())
 });
 
 

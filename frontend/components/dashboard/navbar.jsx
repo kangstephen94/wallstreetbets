@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBarContainer from './searchbar_container';
+import {SearchResults} from './search_results';
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
   }
 
   render () {
-    const {currentUser} = this.props;
+    const {currentUser, searchResults} = this.props;
     return (
         <div className="dash-nav">
           <div className="dash-nav-content">
@@ -35,6 +36,7 @@ class NavBar extends React.Component {
         </Link>
           <ul className="nav-links">
             <li><SearchBarContainer /></li>
+            <li><SearchResults searchResults={searchResults}/></li>
             <li id='currentuser'>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>

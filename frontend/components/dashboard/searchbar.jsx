@@ -8,7 +8,14 @@ class SearchBar extends React.Component {
   }
 
   handleChange (e) {
-    this.setState({query: e.target.value}, () => this.props.searchAssets(this.state.query));
+    this.setState({query: e.target.value}, () => {
+      if (this.state.query === '') {
+        this.props.clearAssets();
+      } else {
+      this.props.searchAssets(this.state.query);
+    }
+    }
+  );
   }
 
   render () {
@@ -17,6 +24,7 @@ class SearchBar extends React.Component {
         className='searchbar'
         onChange={this.handleChange}
         value={this.state.query}
+        placeholder='Symbol or Name'
         />
     );
   }

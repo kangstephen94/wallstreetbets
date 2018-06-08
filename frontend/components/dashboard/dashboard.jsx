@@ -7,7 +7,6 @@ const Dashboard = () => {
     <div className="dashboard">
       <NavBarContainer />
       <div className="watchlist">
-      <WatchListContainer />
       </div>
     </div>
   );

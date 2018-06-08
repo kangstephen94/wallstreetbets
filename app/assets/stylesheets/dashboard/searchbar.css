@@ -1,0 +1,17 @@
+.search-result {
+  background-color: #1b1b1d;
+  z-index: 1;
+  position: absolute;
+  right: 594px;
+  top: 57px;
+  width: 260px;
+}
+
+.search-result li {
+  color: white;
+  height: 7px;
+}
+
+.search-result li:hover {
+  background-color: black;
+}

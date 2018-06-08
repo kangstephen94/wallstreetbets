@@ -3,7 +3,8 @@ import { logout } from '../../actions/session_actions';
 import NavBar from './navbar';
 
 const msp = state => ({
-  currentUser: state.session
+  currentUser: state.session,
+  searchResults: Object.values(state.entities.searchedAssets)
 });
 
 const mdp = dispatch => ({
