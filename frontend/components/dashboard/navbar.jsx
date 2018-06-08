@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from './searchbar_container';
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -27,19 +28,18 @@ class NavBar extends React.Component {
   render () {
     const {currentUser} = this.props;
     return (
-      <div className="splash">
-        <div className="splash-nav">
-          <div className="splash-nav-content">
+        <div className="dash-nav">
+          <div className="dash-nav-content">
           <Link to='/'>
           <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
         </Link>
-          <ul className="links">
+          <ul className="nav-links">
+            <li><SearchBarContainer /></li>
             <li id='currentuser'>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>
           </div>
         </div>
-      </div>
       );
   }
 }

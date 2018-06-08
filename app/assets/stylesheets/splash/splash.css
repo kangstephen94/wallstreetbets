@@ -24,11 +24,6 @@
   height: 120px;
 }
 
-.splash-nav img:hover {
-  width: 120px;
-  height: 120px;
-}
-
 
 .links {
   display: flex;
@@ -176,9 +171,9 @@ a:link {
 
 .footer {
   margin: auto;
-  margin-top: 150px;
-  border-top: 1.5px solid black;
-  border-bottom: 1.5px solid black;
+  margin-top: 175px;
+  border-top: 1.1px solid black;
+  border-bottom: 1.1px solid black;
   width: 1000px;
 }
 
@@ -189,12 +184,13 @@ a:link {
   width: auto;
 }
 
+
 .footer-container {
   display: flex;
   justify-content: space-around;
   width: 65%;
   margin: auto;
-  padding: 100px 0;
+  padding: 75px 0;
 }
 
 @keyframes fadein {

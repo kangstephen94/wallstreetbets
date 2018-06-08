@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: assets
+#
+#  id         :bigint(8)        not null, primary key
+#  symbol     :string           not null
+#  name       :string           not null
+#  last_price :integer          not null
+#  market_cap :bigint(8)        not null
+#  ipo_year   :string           not null
+#  sector     :string           not null
+#  industry   :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
