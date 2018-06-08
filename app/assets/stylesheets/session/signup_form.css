@@ -63,7 +63,7 @@ html, body {
 
 .createinput {
   display: block;
-  margin-top: 20px;
+  margin-top: 45px;
   width: 395px;
   height: 48px;
   border-radius: 5px;
@@ -112,7 +112,7 @@ html, body {
 .login-redirect {
   font-size: 14px;
   font-weight: lighter;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .login-redirect a {

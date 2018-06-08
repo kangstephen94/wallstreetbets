@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -29,9 +30,11 @@ class NavBar extends React.Component {
       <div className="splash">
         <div className="splash-nav">
           <div className="splash-nav-content">
+          <Link to='/'>
           <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
+        </Link>
           <ul className="links">
-            <li>{currentUser.first_name}</li>
+            <li id='currentuser'>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>
           </div>

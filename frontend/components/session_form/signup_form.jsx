@@ -53,7 +53,9 @@ class signupForm extends React.Component {
       <div className='signupcontainer'>
       <form className='signupform' onSubmit={(e) => this.handleSubmit(e)}>
         <div className='signuptitle'>
+          <Link to='/'>
           <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
+        </Link>
           <div className='create-new-user'>Sign up and start trading!</div>
         </div>
         <label className='firstname'>

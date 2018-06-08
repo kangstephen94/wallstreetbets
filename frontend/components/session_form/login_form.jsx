@@ -54,10 +54,12 @@ class loginForm extends React.Component {
         <div className='logincontainer'>
           <form className='loginform' onSubmit={(e) => this.handleSubmit(e)}>
           <div className='logintitle'>
+            <Link to='/'>
             <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
+          </Link>
             <h1>Welcome to WallStreetBets</h1>
           </div>
-            <label className='email'>
+            <div className='email'>
               <div>Email</div>
               <input
                 className='logininput'
@@ -65,9 +67,9 @@ class loginForm extends React.Component {
                 value={this.state.email}
                 onChange={this.update('email')}
                 />
-            </label>
+            </div>
 
-            <label className='password'>
+            <div className='password'>
               <div>Password</div>
               <input
                 className='logininput'
@@ -75,12 +77,12 @@ class loginForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 />
-            </label>
+            </div>
             <div className="loginerrors">{this.renderErrors()}</div>
             <div className='signup-redirect'>Don't have an account? <Link to='/signup'>Click here to sign up!</Link></div>
-            <label>
+            <div>
               <input className="signin" type='submit' value='Sign In'/>
-            </label>
+            </div>
           </form>
         </div>
       </div>

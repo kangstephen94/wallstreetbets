@@ -64,12 +64,14 @@ html, body {
   font-size: 14px;
   letter-spacing: 0.5px;
   margin-top: 10px;
+  padding-bottom: 15px;
 }
 
 .password div {
   font-weight: lighter;
   font-size: 14px;
   letter-spacing: 0.5px;
+  padding-bottom: 15px;
 }
 
 .logintitle h1 {
@@ -80,20 +82,18 @@ html, body {
 }
 
 .logininput {
-  display: block;
-  margin-top: 15px;
-  width: 395px;
+  width: 415px;
   height: 48px;
   border-radius: 5px;
-  padding-left: 15px;
   background-color: #fafafa;
+  margin:0;
+  padding:0;
 }
 
 .logininput:hover {
   background-color: white;
   border: 0.5px solid #cbcbcd;
-  -webkit-animation: fadein 0.35s;
-  height: 47px;
+  -webkit-animation: fadein 0.4s;
 }
 
 
@@ -114,13 +114,13 @@ html, body {
   font-size: 14px;
   padding: 12px 12px;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 
 .signup-redirect {
   font-size: 14px;
   font-weight: lighter;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .signup-redirect a {
