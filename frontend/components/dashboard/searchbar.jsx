@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
         className='searchbar'
         onChange={this.handleChange}
         value={this.state.query}
-        placeholder='Symbol or Name'
+        placeholder='Search'
         />
     );
   }

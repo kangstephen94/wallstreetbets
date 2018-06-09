@@ -10,6 +10,7 @@ import {
 
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
+import AssetContainer from './asset/asset_container';
 import MainPageContainer from './mainpage';
 import {AuthRoute} from '../utils/route_util';
 
@@ -17,6 +18,7 @@ const App = () => (
   <div className='app' >
   <Switch>
     <Route exact path="/" component={MainPageContainer} />
+    // <Route path="/asset/:id" component={AssetContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <Redirect to="/"></Redirect>
