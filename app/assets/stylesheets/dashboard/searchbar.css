@@ -36,9 +36,12 @@ input:hover::-webkit-input-placeholder {
   background-color: #1b1b1d;
   z-index: 1;
   position: absolute;
-  right: 594px;
+  right: 593px;
   top: 60px;
   width: 312px;
+  max-height: 350px;
+  transition: max-height 0.3s ease-out;
+  /* -webkit-box-shadow: 1px 0px 2px 3px #ccc; */
 }
 
 
