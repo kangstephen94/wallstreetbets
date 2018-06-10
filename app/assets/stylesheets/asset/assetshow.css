@@ -1,0 +1,9 @@
+.showAsset {
+  display: flex;
+  flex-direction: column;
+}
+
+.assetDetails {
+  margin: auto;
+  margin-top: 400px;
+}

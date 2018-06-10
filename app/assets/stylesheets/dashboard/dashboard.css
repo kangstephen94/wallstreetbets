@@ -1,4 +1,15 @@
-.dashboard {
-  width: 80%;
-  background-color: #1b1b1d;
+.dashboard-container {
+  width: 100%;
+  height: 100%;
+  animation: color-me-in 3s;
+  background-color: white;
+}
+
+@keyframes color-me-in {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #1b1b1d;
+  }
 }

@@ -12,6 +12,7 @@ import {
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import MainPageContainer from './mainpage';
+import AssetContainer from './asset/asset_container';
 import {AuthRoute} from '../utils/route_util';
 
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
     <Route exact path="/" component={MainPageContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
+    <Route path="/assets/:id" component={AssetContainer} />
     <Redirect to="/"></Redirect>
   </Switch>
   </div>

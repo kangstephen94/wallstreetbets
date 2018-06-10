@@ -1,0 +1,3 @@
+class AssetOwnership < ApplicationRecord
+  
+end

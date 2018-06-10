@@ -5,3 +5,10 @@ export const search = query => (
     data: {query}
   })
 );
+
+export const getAsset = id => (
+  $.ajax({
+    method: "GET",
+    url: `/api/assets/${id}`
+  })
+);
