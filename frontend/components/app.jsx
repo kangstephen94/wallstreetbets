@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom';
 import {
   Route,
   Redirect,
@@ -10,20 +11,38 @@ import {
 
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
-import AssetContainer from './asset/asset_container';
 import MainPageContainer from './mainpage';
 import {AuthRoute} from '../utils/route_util';
 
-const App = () => (
-  <div className='app' >
+class App extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick (e) {
+    const modal = document.getElementById('search-result');
+    const search = document.getElementById('search-bar');
+    if (modal) {
+    if (e.target !== modal && e.target !== search) {
+      modal.style.display = "none";
+    }
+  }
+  }
+
+  render () {
+    return (
+  <div onClick={this.handleClick} className='app' >
   <Switch>
     <Route exact path="/" component={MainPageContainer} />
-    // <Route path="/asset/:id" component={AssetContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <Redirect to="/"></Redirect>
   </Switch>
   </div>
-);
+  );
+}
 
+}
 export default App;

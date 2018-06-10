@@ -7,10 +7,12 @@ class NavBar extends React.Component {
   constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleModalClick = this.handleModalClick.bind(this);
   }
 
   handleClick (e) {
     e.preventDefault();
+    console.log(e.target);
     console.log(this.props);
     this.props.logout();
   }
@@ -26,6 +28,13 @@ class NavBar extends React.Component {
     element.setAttribute('src', 'https://image.ibb.co/gzyVF8/wallstreet.png');
   }
 
+  handleModalClick (e) {
+    const modal = document.getElementById('search-result');
+    if (modal) {
+    modal.style.display = 'block';
+    }
+  }
+
   render () {
     const {currentUser, searchResults} = this.props;
     return (
@@ -35,8 +44,8 @@ class NavBar extends React.Component {
           <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
         </Link>
           <ul className="nav-links">
-            <li><SearchBarContainer /></li>
-            <li><SearchResults searchResults={searchResults}/></li>
+            <li onClick={this.handleModalClick}><SearchBarContainer /></li>
+            <li id='search-results-container'><SearchResults searchResults={searchResults}/></li>
             <li id='currentuser'>{currentUser.first_name}</li>
             <li><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>
