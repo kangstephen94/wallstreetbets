@@ -1,10 +1,17 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {query: ''};
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+      this.setState({query: ''});
+    }
   }
 
   handleChange (e) {
@@ -30,4 +37,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

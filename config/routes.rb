@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :assets, only: [:show]
+    get '/assets/:sym', :to => 'assets#show'
     get '/searches/assets', :to => 'searches#search'
-
+    get '/data/:sym', :to => 'data#data_daily'
   end
 end

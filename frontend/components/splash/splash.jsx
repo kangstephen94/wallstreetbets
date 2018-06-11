@@ -22,7 +22,6 @@ class Splash extends React.Component  {
 
   handleClick (e) {
     e.preventDefault();
-    console.log(this.props);
     this.props.login(this.props.user);
   }
 

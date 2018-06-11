@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SearchBarContainer from './searchbar_container';
 import {SearchResults} from './search_results';
 
@@ -8,6 +8,12 @@ class NavBar extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+      this.props.clearAsset();
+    }
   }
 
   handleClick (e) {
@@ -40,19 +46,22 @@ class NavBar extends React.Component {
     return (
         <div className="dash-nav">
           <div className="dash-nav-content">
-          <Link to='/'>
-          <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
-        </Link>
           <ul className="nav-links">
-            <li onClick={this.handleModalClick}><SearchBarContainer /></li>
-            <li id='search-results-container'><SearchResults searchResults={searchResults}/></li>
+            <li id="dash-icon">
+              <Link to='/'>
+              <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
+            </Link>
+          </li>
+            <li className='search-container' onClick={this.handleModalClick}>
+              <SearchBarContainer />
+            <SearchResults searchResults={searchResults}/>
+            </li>
             <li id='currentuser'>{currentUser.first_name}</li>
-            <li><a href='' onClick={this.handleClick}>Logout</a></li>
+            <li id='logout'><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>
           </div>
         </div>
       );
+    }
   }
-}
-
-export default NavBar;
+export default withRouter(NavBar);

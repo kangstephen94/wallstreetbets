@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
+gem "figaro"
 gem 'pry-rails'
 gem 'annotate'
 gem 'bcrypt'
@@ -28,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7''pryf-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -25,7 +25,7 @@ class User < ApplicationRecord
   has_one :portfolio,
   primary_key: :id,
   foreign_key: :user_id,
-  class_name: :Portfolio
+  class_name: :portfolio
 
 
   def self.find_by_credentials(email, password)

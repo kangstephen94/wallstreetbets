@@ -6,13 +6,21 @@ class Asset extends React.Component {
     super(props);
   }
 
-  componentWillMount () {
-    this.props.retrieveAsset(this.props.match.params.id);
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+      this.props.retrieveAsset(nextProps.match.params.sym);
+      this.props.retrieveData(nextProps.match.params.sym);
+    }
+  }
+
+  componentDidMount () {
+    this.props.retrieveAsset(this.props.match.params.sym);
+    this.props.retrieveData(this.props.match.params.sym);
   }
 
 
+
   render () {
-    console.log(this.props.asset);
     const {asset} = this.props;
     if (asset) {
       var name = asset.name;
@@ -23,9 +31,10 @@ class Asset extends React.Component {
       var sector = asset.sector;
     }
     return (
-      <div className="showAsset">
+      <div className="show-asset">
         <NavBarContainer />
-        <ul className="assetDetails">
+        <div className="asset-content">
+        <ul className="asset-details">
           <li>{name}</li>
           <li>{symbol}</li>
           <li>{marketCap}</li>
@@ -33,6 +42,7 @@ class Asset extends React.Component {
           <li>{industry}</li>
           <li>{sector}</li>
         </ul>
+        </div>
       </div>
     );
   }

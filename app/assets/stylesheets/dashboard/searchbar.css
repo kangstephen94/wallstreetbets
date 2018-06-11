@@ -1,7 +1,7 @@
-.searchbar-container {
+.search-container {
   display: flex;
-  flex-direction: row;
-  width: 10px;
+  flex-direction: column;
+  margin-right: 100px;
 }
 
 #search-bar {
@@ -35,8 +35,6 @@ input:hover::-webkit-input-placeholder {
   flex-direction: column;
   background-color: #1b1b1d;
   z-index: 1;
-  position: absolute;
-  right: 593px;
   top: 60px;
   width: 312px;
 }

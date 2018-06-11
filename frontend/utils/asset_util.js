@@ -6,9 +6,16 @@ export const search = query => (
   })
 );
 
-export const getAsset = id => (
+export const getAsset = sym => (
   $.ajax({
     method: "GET",
-    url: `/api/assets/${id}`
+    url: `/api/assets/${sym}`
+  })
+);
+
+export const getData = sym => (
+  $.ajax({
+    method: "GET",
+    url: `/api/data/${sym}`
   })
 );

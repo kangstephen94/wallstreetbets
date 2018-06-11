@@ -1,16 +1,21 @@
-import {search, getAsset} from '../utils/asset_util';
+import {search, getAsset, getData} from '../utils/asset_util';
 
 export const SEARCHASSETS = "SEARCHASSETS";
 export const CLEARASSETS = "CLEARASSETS";
 export const RECEIVEASSET = "RECEIVEASSET";
+export const RECEIVEDATA = "RECEIVEDATA";
 
-export const retrieveAsset = id => dispatch => (
-  getAsset(id).then( asset => dispatch(receiveAsset(asset)))
+export const retrieveAsset = sym => dispatch => (
+  getAsset(sym).then( asset => dispatch(receiveAsset(asset)))
 );
 
 
 export const searchAssets = query => dispatch => (
   search(query).then( assets => dispatch(receiveSearch(assets)))
+);
+
+export const retrieveData = sym => dispatch => (
+  getData(sym).then( data => dispatch(receiveData(data)))
 );
 
 export const clearAsset = () => ({
@@ -26,4 +31,9 @@ export const receiveSearch = assets => ({
 export const receiveAsset = asset => ({
   type: RECEIVEASSET,
   asset
+});
+
+export const receiveData = data => ({
+  type: RECEIVEDATA,
+  data
 });
