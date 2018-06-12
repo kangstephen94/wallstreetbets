@@ -9,18 +9,10 @@
 #  price_purchased :integer          not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  side            :string           not null
 #
 
 class AssetOwnership < ApplicationRecord
-  validates :asset_id, :portfolio_id, :amounnt, :price_purchased, presence: true
-  
-  belongs_to :portfolio,
-  primary_key: :id,
-  foreign_key: :portfolio_id,
-  class_name: :portfolio
+  validates :asset_id, :portfolio_id, :amounnt, :price_purchased, :side, presence: true
 
-  belongs_to :asset,
-  primary_key: :id,
-  foreign_key: :asset_id,
-  class_name: :asset
 end

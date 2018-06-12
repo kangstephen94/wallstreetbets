@@ -14,10 +14,17 @@ export const getAsset = sym => (
 );
 
 export const getData = (sym, func) => {
-  console.log(func);
   return $.ajax({
     method: "GET",
     url: `/api/data/${sym}`,
     data: {func}
+  });
+};
+
+export const buyAsset = (assetOwnership) => {
+  return $.ajax({
+    method: "POST",
+    url: '/api/asset_ownerships',
+    data: {assetOwnership}
   });
 };

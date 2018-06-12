@@ -37,6 +37,11 @@ class Api::DataController < ApplicationController
     data_body = JSON.parse(asset_data.body)[key]
     @data_keys = data_body.keys[a...b].reverse
     @data_values = data_body.values[a...b].reverse.map{ |value| value["4. close"]}.map{|num| num.to_f.round(2)}
+
+    @asset = Asset.find_by(symbol: sym);
+    @asset.update(:last_price => @data_values[-1])
+
     render "api/data/data_daily"
+
   end
 end

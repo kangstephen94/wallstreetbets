@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
 import AssetChart from './asset_chart';
-import {retrieveData} from '../../actions/asset_actions';
+import {retrieveData, clearData} from '../../actions/asset_actions';
+import { Link, withRouter } from 'react-router-dom';
+
 
 const msp = (state, ownProps) => ({
-  data: Object.values(state.entities.data),
+  data: state.entities.data,
 });
 
 const mdp = dispatch => ({
-  retrieveData: (sym,func) => dispatch(retrieveData(sym, func))
+  retrieveData: (sym,func) => dispatch(retrieveData(sym, func)),
+  clearData: () => dispatch(clearData())
 });
 
-export default connect(msp, mdp)(AssetChart);
+export default withRouter(connect(msp, mdp)(AssetChart));

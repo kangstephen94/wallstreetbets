@@ -40,23 +40,41 @@ class AssetChart extends React.Component {
    this.getValue = this.getValue.bind(this);
  }
 
+ componentWillReceiveProps (nextProps) {
+   if (this.props.match.params.sym !== nextProps.match.params.sym) {
+   this.props.retrieveData(nextProps.match.params.sym, 'TIME_SERIES_1D');
+ }
+ }
+
+ componentWillUnmount () {
+   this.props.clearData();
+ }
+
+ componentDidMount () {
+   this.props.retrieveData(this.props.match.params.sym, 'TIME_SERIES_1D');
+ }
+
  getValue (payload, label) {
    this.setState({payload: payload, label: label});
  }
 
  render () {
-   const {data} = this.props;
-   if (data.length===0) return <div>No Data</div>;
+   if (this.props.data.data === undefined) {
+     return <div className='loader'>No Data</div>;
+   }
+  else {
+    var data = Object.values(this.props.data.data);
+  }
      if (this.state.payload) {
        var number = this.state.payload[0].value;
        var date = this.state.label;
        var percent = ((number/data[0].value - 1) * 100).toPrecision(3);
        var difference = (number - data[0].value).toPrecision(3);
      } else {
-       var number = '';
-       var date = '';
-       var percent = '';
-       var difference = '';
+       var number = ' ';
+       var percent = ' ';
+       var difference = ' ';
+       var date = ' ';
      }
 
      if (percent >= 0) {
@@ -64,13 +82,13 @@ class AssetChart extends React.Component {
      } else {
        var color = "red";
      }
-
    return (
-     <div>
-       <div className="custom-tooltip">
-         <p className="label">{`$${number}`}</p>
-         <p className="percentage">{`$${difference} (${percent}%)`}</p>
-       </div>
+     <div className='asset-chart'>
+       <ul className="custom-tooltip">
+         <li id="price">{`$${number}`}</li>
+         <li id="percentage">{`$${difference} (${percent}%)`}</li>
+         <li className="date">{`${date}`}</li>
+       </ul>
        <AreaChart className='show-chart' width={700} height={350} data={data}
          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
          <defs>

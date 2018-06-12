@@ -13,15 +13,19 @@ class Asset extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (this.props.match.params.sym !== nextProps.match.params.sym) {
-      this.props.retrieveAsset(nextProps.match.params.sym);
-      this.props.retrieveData(nextProps.match.params.sym, 'TIME_SERIES_1D');
+      this.props.clearData();
       this.setState({func: 'TIME_SERIES_1D'});
+      this.props.retrieveAsset(nextProps.match.params.sym);
     }
+  }
+
+  componentWillUnmount () {
+    this.props.clearData();
   }
 
   componentDidMount () {
     this.props.retrieveAsset(this.props.match.params.sym);
-    this.props.retrieveData(this.props.match.params.sym, 'TIME_SERIES_1D');
+
   }
 
   handleClick (e) {
@@ -46,44 +50,71 @@ class Asset extends React.Component {
         <NavBarContainer />
         <div className="asset-content">
           <h1>{name}</h1>
-          <div className="chart-container">
-            <AssetChartContainer />
+          <div className="buy-sell-flex">
+            <div className="chart-container">
+              <AssetChartContainer />
 
-            <ul className="chart-options">
-              <li className={this.state.func == 'TIME_SERIES_1D' ? 'selected' : ''}>
-                <button
-                  onClick={this.handleClick}
-                  value='TIME_SERIES_1D'>
-                  1D</button>
-              </li>
-              <li className={this.state.func == 'TIME_SERIES_1W' ? 'selected' : ''}>
-                <button
-                  onClick={this.handleClick}
-                  value='TIME_SERIES_1W'>
-                  1W</button>
-              </li>
-              <li className={this.state.func == 'TIME_SERIES_1M' ? 'selected' : ''}>
-                <button
-                  onClick={this.handleClick}
-                  value='TIME_SERIES_1M'>
-                  1M</button>
-              </li>
-              <li className={this.state.func == 'TIME_SERIES_1Y' ? 'selected' : ''}>
-                <button
-                  onClick={this.handleClick}
-                  value='TIME_SERIES_1Y'>
-                  1Y</button>
-              </li>
-            </ul>
+              <div className="option-container">
+                <ul className="chart-options">
+                  <li className={this.state.func == 'TIME_SERIES_1D' ? 'selected' : ''}>
+                    <button
+                      onClick={this.handleClick}
+                      value='TIME_SERIES_1D'>
+                      1D</button>
+                  </li>
+                  <li className={this.state.func == 'TIME_SERIES_1W' ? 'selected' : ''}>
+                    <button
+                      onClick={this.handleClick}
+                      value='TIME_SERIES_1W'>
+                      1W</button>
+                  </li>
+                  <li className={this.state.func == 'TIME_SERIES_1M' ? 'selected' : ''}>
+                    <button
+                      onClick={this.handleClick}
+                      value='TIME_SERIES_1M'>
+                      1M</button>
+                  </li>
+                  <li className={this.state.func == 'TIME_SERIES_1Y' ? 'selected' : ''}>
+                    <button
+                      onClick={this.handleClick}
+                      value='TIME_SERIES_1Y'>
+                      1Y</button>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+            <SellBuyContainer />
           </div>
-          <SellBuyContainer />
-          <ul className="asset-details">
-            <li>Company: {name}</li>
-            <li>Symbol: {symbol}</li>
-            <li>Market Cap: {marketCap}</li>
-            <li>IPO Year: {ipoYear}</li>
-            <li>Industry: {industry}</li>
-            <li>Sector: {sector}</li>
+          <ul className="asset-details1">
+            <li>
+              <p>Company:</p>
+              <p>{name}</p>
+            </li>
+            <li>
+              <p>Symbol:</p>
+              <p>{symbol}</p>
+            </li>
+            <li>
+              <p>Market Cap:</p>
+              <p>{marketCap}</p>
+            </li>
+          </ul>
+
+          <ul className="asset-details2">
+              <li>
+                <p>IPO Year:</p>
+                <p>{ipoYear}</p>
+              </li>
+              <li>
+                <p>Industry:</p>
+                <p>{industry}</p>
+              </li>
+              <li>
+                <p>Sector:</p>
+                <p>{sector}</p>
+              </li>
           </ul>
 
         </div>

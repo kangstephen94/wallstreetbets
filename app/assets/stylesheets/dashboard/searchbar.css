@@ -38,8 +38,11 @@ input:hover::-webkit-input-placeholder {
   background-color: #1b1b1d;
   z-index: 1;
   top: 60px;
-  width: 412px;
+  width: 410px;
   margin-left: 168px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 
