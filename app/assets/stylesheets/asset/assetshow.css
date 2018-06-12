@@ -28,6 +28,10 @@
   font-size: 36px;
 }
 
+.asset-content h1:hover{
+  color: #21ce99;
+}
+
 
 .chart-container {
   display: flex;
@@ -61,7 +65,9 @@
 }
 
 #date {
-  padding-top: 5px;
+  position: absolute;
+  top: 575px;
+  left: 550px;
 }
 
 .option-container {
@@ -88,26 +94,30 @@
   color: #1ae9aa;
 }
 
+.title {
+  color: #21ce99;
+}
 
 .asset-details1 {
   display: flex;
   flex-direction: row;
-  margin-left: 268px;
-  margin-top: 20px;
+  margin-left: 285px;
+  margin-top: 50px;
   color: white;
 }
 
 .asset-details1 li {
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
+  padding-left: 40px;
+  width: 150px;
 }
 
 .asset-details2 {
   display: flex;
   flex-direction: row;
-  margin-left: 268px;
-  margin-top: 20px;
+  margin-left: 285px;
+  margin-top: 30px;
   color: white;
 }
 
@@ -115,6 +125,8 @@
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  width: 150px;
+  padding-left: 40px;
 }
 
 .selected {
@@ -138,7 +150,7 @@
 }
 .loader {
   margin: 122px auto;
-  font-size: 17px;
+  font-size: 16px;
   position: relative;
   text-indent: -9999em;
   border-top: 1.1em solid rgba(255, 255, 255, 0.2);

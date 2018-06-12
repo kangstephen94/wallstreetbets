@@ -74,7 +74,7 @@ class AssetChart extends React.Component {
        var number = ' ';
        var percent = ' ';
        var difference = ' ';
-       var date = ' ';
+       var date = 'time:';
      }
 
      if (percent >= 0) {
@@ -87,7 +87,7 @@ class AssetChart extends React.Component {
        <ul className="custom-tooltip">
          <li id="price">{`$${number}`}</li>
          <li id="percentage">{`$${difference} (${percent}%)`}</li>
-         <li className="date">{`${date}`}</li>
+         <li id="date">{`${date}`}</li>
        </ul>
        <AreaChart className='show-chart' width={700} height={350} data={data}
          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>

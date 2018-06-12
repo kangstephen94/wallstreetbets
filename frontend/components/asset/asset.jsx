@@ -89,30 +89,30 @@ class Asset extends React.Component {
           </div>
           <ul className="asset-details1">
             <li>
-              <p>Company:</p>
+              <p className="title">Company:</p>
               <p>{name}</p>
             </li>
             <li>
-              <p>Symbol:</p>
+              <p className="title">Symbol:</p>
               <p>{symbol}</p>
             </li>
             <li>
-              <p>Market Cap:</p>
+              <p className="title">Market Cap:</p>
               <p>{marketCap}</p>
             </li>
           </ul>
 
           <ul className="asset-details2">
               <li>
-                <p>IPO Year:</p>
+                <p className="title">IPO Year:</p>
                 <p>{ipoYear}</p>
               </li>
               <li>
-                <p>Industry:</p>
+                <p className="title">Industry:</p>
                 <p>{industry}</p>
               </li>
               <li>
-                <p>Sector:</p>
+                <p className="title">Sector:</p>
                 <p>{sector}</p>
               </li>
           </ul>
