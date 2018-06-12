@@ -7,22 +7,29 @@
   flex-direction: column;
   width: 100%;
   background-color: #1b1b1d;
+  position: relative;
 }
 
 .asset-content {
   width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .asset-content h1 {
   margin: auto;
   margin-top: 75px;
   margin-left: 250px;
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 35px;
+  font-weight: 500;
   color: white;
+  font-family: 'Roboto', sans-serif;
+}
 
+.aside {
+  float:right;
 }
 
 .chart-container {
@@ -36,39 +43,89 @@
   display: block;
   height: 300px;
   width: 730px;
+  margin-left: 250px;
+}
+
+.label {
+  font-size: 30px;
+  color:white;
+  position: absolute;
+  top: 110px;
+  left: 250px;
+}
+
+.percentage {
+  font-size: 16px;
+  color:white;
+  position: absolute;
+  top: 150px;
+  left: 250px;
+}
+
+.tooltip {
+  background-color: #1b1b1d;
+  color: white;
 }
 
 .chart-options {
   display: flex;
   margin-left: 305px;
   color: white;
+  border-bottom: white;
+}
+
+.chart-options li {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .chart-options li:hover {
   color: #1ae9aa;
-  padding: 5px;
 }
 
-.interval-button {
-  padding: 5px;
-}
 
 .asset-details {
   display: block;
-  width: 800px;
+  width: 900px;
   margin: auto;
   margin-top: 75px;
   margin-left: 250px;
   display: flex;
-  color: white;
   border: 1px solid white;
 }
 
 .asset-details li {
   padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: white;
 }
 
 .selected {
   text-decoration: underline;
   color: #21ce99;
+}
+
+
+.buysell {
+  display: block;
+  position: fixed;
+  top: 180px;
+  right: 200px;
+  width: 275px;
+  height: 450px;
+  background-color: #1b1b1d;
+  color: white;
+  box-shadow: 0.6px 0.6px 25px 1px black;
+}
+
+.buysell h2 {
+  margin: auto;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.buysell-content {
+  padding: 20px;
 }

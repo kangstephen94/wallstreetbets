@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../dashboard/navbar_container';
 import AssetChartContainer from './asset_chart_container';
+import SellBuyContainer from './buy_sell_container';
 
 
 class Asset extends React.Component {
@@ -14,6 +15,7 @@ class Asset extends React.Component {
     if (this.props.match.params.sym !== nextProps.match.params.sym) {
       this.props.retrieveAsset(nextProps.match.params.sym);
       this.props.retrieveData(nextProps.match.params.sym, 'TIME_SERIES_1D');
+      this.setState({func: 'TIME_SERIES_1D'});
     }
   }
 
@@ -74,6 +76,7 @@ class Asset extends React.Component {
               </li>
             </ul>
           </div>
+          <SellBuyContainer />
           <ul className="asset-details">
             <li>Company: {name}</li>
             <li>Symbol: {symbol}</li>
@@ -82,6 +85,7 @@ class Asset extends React.Component {
             <li>Industry: {industry}</li>
             <li>Sector: {sector}</li>
           </ul>
+
         </div>
       </div>
     );

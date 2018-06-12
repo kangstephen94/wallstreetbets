@@ -11,8 +11,9 @@
   padding-left: 10px;
   width: 400px;
   height: 28px;
-  border: 1px solid white;
+  border: 0.6px solid white;
   margin-right: 300px;
+  margin-left: 168px;
 }
 
 #search-bar:hover {
@@ -38,6 +39,7 @@ input:hover::-webkit-input-placeholder {
   z-index: 1;
   top: 60px;
   width: 412px;
+  margin-left: 168px;
 }
 
 

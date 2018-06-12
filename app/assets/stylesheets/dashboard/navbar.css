@@ -41,7 +41,8 @@
 
 #dash-icon {
   padding: 0px;
-  margin-right: 200px;
+  position: absolute;
+  left: 150px;
 }
 
 #currentuser {
