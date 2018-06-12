@@ -1,15 +1,74 @@
+.app {
+  background-color: #1b1b1d;
+}
+
 .show-asset {
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
+  background-color: #1b1b1d;
 }
 
 .asset-content {
   width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
+.asset-content h1 {
+  margin: auto;
+  margin-top: 75px;
+  margin-left: 250px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
 
-.asset-details {
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-chart {
   margin: auto;
   margin-top: 100px;
+  display: block;
+  height: 300px;
+  width: 730px;
+}
+
+.chart-options {
+  display: flex;
+  margin-left: 305px;
+  color: white;
+}
+
+.chart-options li:hover {
+  color: #1ae9aa;
+  padding: 5px;
+}
+
+.interval-button {
+  padding: 5px;
+}
+
+.asset-details {
+  display: block;
+  width: 800px;
+  margin: auto;
+  margin-top: 75px;
+  margin-left: 250px;
+  display: flex;
+  color: white;
+  border: 1px solid white;
+}
+
+.asset-details li {
+  padding: 10px;
+}
+
+.selected {
+  text-decoration: underline;
+  color: #21ce99;
 }

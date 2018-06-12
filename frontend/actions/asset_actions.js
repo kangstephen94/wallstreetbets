@@ -14,8 +14,8 @@ export const searchAssets = query => dispatch => (
   search(query).then( assets => dispatch(receiveSearch(assets)))
 );
 
-export const retrieveData = sym => dispatch => (
-  getData(sym).then( data => dispatch(receiveData(data)))
+export const retrieveData = (sym, func) => dispatch => (
+  getData(sym, func).then( data => dispatch(receiveData(data)))
 );
 
 export const clearAsset = () => ({

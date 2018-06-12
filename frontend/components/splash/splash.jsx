@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label } from 'recharts';
+import { AreaChart, Area, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label } from 'recharts';
 
 class Splash extends React.Component  {
   constructor(props) {
@@ -26,40 +26,45 @@ class Splash extends React.Component  {
   }
 
   render () {
-  const data = [{ name: 'Jan', assets: 2000 }, {name: 'Feb', assets: 3000 },
-  {name: 'Mar', assets: 5000 }, {name: 'Apr', assets: 6000 },
-  {name: 'May', assets: 7000 }, {name: 'Jun', assets: 12000 },
-{name: 'Jul', assets: 20000 }, {name: 'Aug', assets: 24000 },
-{name: 'Sept', assets: 38000 }, {name: 'Nov', assets: 55000 },
-{name: 'Dec', assets: 97000}];
+    const data = [{ name: 'Jan', assets: 2000 }, {name: 'Feb', assets: 3000 },
+    {name: 'Mar', assets: 5000 }, {name: 'Apr', assets: 6000 },
+    {name: 'May', assets: 7000 }, {name: 'Jun', assets: 12000 },
+    {name: 'Jul', assets: 20000 }, {name: 'Aug', assets: 24000 },
+    {name: 'Sept', assets: 38000 }, {name: 'Nov', assets: 55000 },
+    {name: 'Dec', assets: 97000}];
 
-  return (
-    <div className="splash">
-      <div className="splash-nav">
-        <div className="splash-nav-content">
-        <Link to='/'><img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
-        </Link>
-        <ul className="links">
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-          <li><a href=''>Careers</a></li>
-          <li><a href=''>Help</a></li>
-          <li><a href='' onClick={this.handleClick}>Demo</a></li>
-        </ul>
+    return (
+      <div className="splash">
+        <div className="splash-nav">
+          <div className="splash-nav-content">
+            <Link to='/'><img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
+          </Link>
+          <ul className="links">
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><a href=''>Careers</a></li>
+            <li><a href=''>Help</a></li>
+            <li><a href='' onClick={this.handleClick}>Demo</a></li>
+          </ul>
         </div>
       </div>
 
       <div className='container'>
-        <LineChart className="chart" width={550} height={325} data={data} margin={{ top: 5, right: 20, bottom: 20, left: 5 }}>
-          <Line type="monotone" dataKey="uv" stroke="#21ce99" />
-          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <XAxis dataKey="name">
-            <Label value="Portfolio Value" offset={-15} position="insideBottom" />
-        </XAxis>
+        <AreaChart width={575} height={300} data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#21ce99" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#21ce99" stopOpacity={0}/>
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" />
           <YAxis />
-          <Line type="monotone" dataKey="assets" stroke="#21ce99" />
+          <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-        </LineChart>
+          <Area type="monotone" dataKey="assets" stroke="#21ce99" fillOpacity={1} fill="url(#colorUv)" />
+        </AreaChart>
+
 
         <div className='text1'>
           <h1>Investing.</h1>

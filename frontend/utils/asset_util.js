@@ -13,9 +13,11 @@ export const getAsset = sym => (
   })
 );
 
-export const getData = sym => (
-  $.ajax({
+export const getData = (sym, func) => {
+  console.log(func);
+  return $.ajax({
     method: "GET",
-    url: `/api/data/${sym}`
-  })
-);
+    url: `/api/data/${sym}`,
+    data: {func}
+  });
+};

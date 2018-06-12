@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     get '/assets/:sym', :to => 'assets#show'
     get '/searches/assets', :to => 'searches#search'
-    get '/data/:sym', :to => 'data#data_daily'
+    get '/data/:sym', :to => 'data#data'
   end
 end
