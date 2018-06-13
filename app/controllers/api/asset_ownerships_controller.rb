@@ -1,7 +1,6 @@
 class Api::AssetOwnershipsController < ApplicationController
   def create
     @assetOwnership = AssetOwnership.new(asset_params)
-    debugger
     @assetOwnership.save
   end
 

@@ -6,7 +6,7 @@ class BuySell extends React.Component {
     super(props);
     this.state = {
       asset_id: this.props.asset.id,
-      portfolio_id: this.props.currentUserId,
+      portfolio_id: this.props.currentUser.id,
       amount: 0,
       price_purchased: this.props.asset.last_price,
       side: 'Buy'
@@ -32,6 +32,7 @@ class BuySell extends React.Component {
   render () {
     const {asset} = this.props;
     let el;
+    let el2;
     if (this.state.side === "Buy") {
       el = (
         <div className="estimated">
@@ -39,12 +40,19 @@ class BuySell extends React.Component {
           <p id="cost">${this.state.amount * this.state.price_purchased}</p>
         </div>
       );
+      el2 = (
+        <p className="buying-power">${this.props.currentUser.buying_power} Buying Power Available</p>
+
+      );
     } else {
       el = (
       <div className="estimated">
         <p>Estimated Credit</p>
         <p id="cost">${this.state.amount * this.state.price_purchased}</p>
       </div>
+      );
+      el2 = (
+        <p className="buying-power">30 Shares Available</p>
       );
     }
     return (
@@ -63,7 +71,7 @@ class BuySell extends React.Component {
           >Sell {asset.symbol}
           </button>
       </div>
-      <form >
+      <form className="shares">
           <label for="amount">Shares</label>
             <input
               id='amount'
@@ -78,7 +86,8 @@ class BuySell extends React.Component {
       </div>
       {el}
       <button onClick={this.handleSubmit} className="submit-order">Submit Order</button>
-    </div>
+      {el2}
+      </div>
     );
   }
 

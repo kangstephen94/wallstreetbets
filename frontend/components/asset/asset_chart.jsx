@@ -78,12 +78,15 @@ class AssetChart extends React.Component {
       var date = 'time:';
     }
   }
+  let change = ((data[data.length-1].value/data[0].value - 1)*100).toPrecision(3);
 
-     if (percent >= 0) {
-       var color = "#21ce99";
-     } else {
-       var color = "#f45531";
-     }
+  if (change >= 0) {
+    var color = "#21ce99";
+  } else {
+    var color = "#f45531";
+  }
+
+
    return (
      <div className='asset-chart'>
        <ul className="custom-tooltip">
@@ -91,7 +94,7 @@ class AssetChart extends React.Component {
          <li id="percentage">{`$${difference} (${percent}%)`}</li>
          <li id="date">{`${date}`}</li>
        </ul>
-       <AreaChart className='show-chart' width={700} height={350} data={data}
+       <AreaChart className='show-chart' width={650} height={350} data={data}
          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
          <defs>
            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

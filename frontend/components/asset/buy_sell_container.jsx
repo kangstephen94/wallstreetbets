@@ -5,7 +5,7 @@ import {retrieveBuy} from '../../actions/asset_actions';
 
 const msp = (state, ownProps) => ({
   asset: state.entities.assets[ownProps.match.params.sym],
-  currentUserId: state.session.id
+  currentUser: state.session
   });
 
 const mdp = dispatch => ({

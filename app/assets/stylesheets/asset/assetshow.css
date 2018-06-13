@@ -2,27 +2,23 @@
   width: 100%;
 }
 
-.app {
-  background-color: #1b1b1d;
-  width: 100%
-}
-
 .show-asset {
   width: 100%;
+  height: 100%;
   background-color: #1b1b1d;
 }
 
 .asset-content {
   width: 70%;
   margin: auto;
-  margin-left: 268px;;
+  margin-left: 210px;;
   display: flex;
   flex-direction: column;
 }
 
 #name {
   margin: auto;
-  margin-left: 268px;
+  margin-left: 210px;
   margin-top: 100px;
   color: #f45531;
   font-size: 36px;
@@ -34,7 +30,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-left: 268px;
+  margin-left: 210px;
 }
 
 .buy-sell-flex {
@@ -105,7 +101,7 @@
 .asset-details1 {
   display: flex;
   flex-direction: row;
-  margin-left: 285px;
+  margin-left: 187px;
   margin-top: 50px;
   color: white;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
@@ -121,7 +117,7 @@
 .asset-details2 {
   display: flex;
   flex-direction: row;
-  margin-left: 285px;
+  margin-left: 187px;
   margin-top: 30px;
   color: white;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
@@ -143,11 +139,12 @@
 .buysell {
   display: flex;
   flex-direction: column;
-  width: 220px;
-  height: 325px;
+  width: 250px;
+  height: 360px;
   box-shadow: 0.5px 0.5px 15px 1px black;
   padding: 10px;
   padding-top: 25px;
+  padding-bottom: 15px;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
 
 }
@@ -156,41 +153,40 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border-bottom: 1px solid black;
 }
 
-.buysell label {
+.shares {
+  display: flex;
+  justify-content: space-around;
   color: white;
-  margin-left: 14px;
+  margin-top: 35px;
+  max-height: 25px;
 }
+
 
 #amount {
   background-color: black;
-  color: white;
   padding-left: 20px;
   width: 40px;
   height: 25px;
   border-radius: 5px;
-  margin-top: 35px;
-  margin-left: 75px;
+  margin-left: 38px;
 }
 
 #amount:focus {
   border: 1px solid #f45531;
-  margin-top: 34px;
 }
 
 .marketprice {
   color: white;
   display:flex;
+  justify-content: space-around;
   margin-top: 25px;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid black;
   padding-bottom: 30px;
-  margin-left: 14px;
 }
 
 .last-price {
-  margin-left: 40px;
 }
 
 .estimated {
@@ -206,6 +202,7 @@
   color: #f45531;
   font-size: 14px;
 }
+
 .buysell-button {
   color: white;
   font-size: 18px;
@@ -238,6 +235,15 @@
 
 .submit-order:hover {
   background-color: #1ae9aa;
+}
+
+.buying-power {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  font-size: 13px;
+  border-top: 1px solid black;
+  padding-top: 10px;
 }
 
 .loader,

@@ -9,11 +9,11 @@
   background-color: #1b1b1d;
   color: white;
   padding-left: 10px;
-  width: 400px;
+  width: 450px;
   height: 28px;
   border: 0.6px solid white;
   margin-right: 300px;
-  margin-left: 168px;
+  margin-left: 100px;
 }
 
 #search-bar:hover {
@@ -38,16 +38,18 @@ input:hover::-webkit-input-placeholder {
   background-color: #1b1b1d;
   z-index: 1;
   top: 60px;
-  width: 410px;
-  margin-left: 168px;
+  width: 459px;
+  margin-left: 100px;
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
 }
 
 
+
 #search-result li {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   color: white;
   font-size: 12px;
   padding: 10px 10px;

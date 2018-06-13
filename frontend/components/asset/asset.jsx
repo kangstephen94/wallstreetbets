@@ -7,8 +7,20 @@ import BuySellContainer from './buy_sell_container';
 class Asset extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {func: 'TIME_SERIES_1D'};
+    this.state = {
+      func: 'TIME_SERIES_1D',
+      isLoaded: true
+    };
     this.handleClick = this.handleClick.bind(this);
+    this.changeState = this.changeState.bind(this);
+  }
+
+  changeState () {
+    this.setState({isLoaded: false});
+  }
+
+  componentWillMount () {
+    setTimeout(this.changeState, 1500);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -48,7 +60,14 @@ class Asset extends React.Component {
       var el = <BuySellContainer />;
     }
 
+    if (this.state.isLoaded) {
+      return (
+        (<div className="loader2">Loading...</div>)
+      );
+    }
+
     return (
+
       <div className="show-asset">
         <NavBarContainer />
         <div className="asset-content">
