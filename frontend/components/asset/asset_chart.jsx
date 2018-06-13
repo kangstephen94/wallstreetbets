@@ -59,28 +59,30 @@ class AssetChart extends React.Component {
  }
 
  render () {
+   let data;
    if (this.props.data.data === undefined) {
      return <div className='loader'>No Data</div>;
    }
   else {
-    var data = Object.values(this.props.data.data);
+    data = Object.values(this.props.data.data);
+
+    if (this.state.payload) {
+      var number = this.state.payload[0].value;
+      var date = this.state.label;
+      var percent = ((number/data[0].value - 1) * 100).toPrecision(3);
+      var difference = (number - data[0].value).toPrecision(3);
+    } else {
+      var number = data.slice(-1)[0].value;
+      var percent = ((data[data.length-1].value/data[0].value - 1)*100).toPrecision(3);
+      var difference = (data[data.length-1].value - data[0].value).toPrecision(3);
+      var date = 'time:';
+    }
   }
-     if (this.state.payload) {
-       var number = this.state.payload[0].value;
-       var date = this.state.label;
-       var percent = ((number/data[0].value - 1) * 100).toPrecision(3);
-       var difference = (number - data[0].value).toPrecision(3);
-     } else {
-       var number = ' ';
-       var percent = ' ';
-       var difference = ' ';
-       var date = 'time:';
-     }
 
      if (percent >= 0) {
        var color = "#21ce99";
      } else {
-       var color = "red";
+       var color = "#f45531";
      }
    return (
      <div className='asset-chart'>
@@ -97,9 +99,8 @@ class AssetChart extends React.Component {
              <stop offset="95%" stopColor={color} stopOpacity={0}/>
            </linearGradient>
          </defs>
-         <XAxis interval={0} dataKey="key" tick={false} />
+         <XAxis hide={true} interval={0} dataKey="key" tick={false} />
          <YAxis hide={true} domain={[dataMin => (Math.round(dataMin)*0.995), 'dataMax']}/>
-         <CartesianAxis />
          <Tooltip content={<CustomTooltip getValue={this.getValue}/>} />
          <Tooltip cursor={{ stroke: 'white', strokeWidth: 2 }} />
          <Area type="monotone" dataKey="value" stroke={color} fillOpacity={1} fill="url(#colorUv)" />

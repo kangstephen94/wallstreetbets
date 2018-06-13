@@ -20,16 +20,13 @@
   flex-direction: column;
 }
 
-.asset-content h1{
+#name {
   margin: auto;
   margin-left: 268px;
   margin-top: 100px;
-  color: white;
+  color: #f45531;
   font-size: 36px;
-}
-
-.asset-content h1:hover{
-  color: #21ce99;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 
@@ -55,7 +52,8 @@
 
 
 #percentage {
-  padding-top: 30px;
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 #price {
@@ -66,32 +64,38 @@
 
 #date {
   position: absolute;
-  top: 575px;
+  top: 595px;
   left: 550px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .option-container {
-  float: none;
   display: block;
-  width: 200px;
-  box-shadow:
+  border-bottom: 1px solid white;
+  max-height: 46px;
+  width: 500px;
 }
 
 .chart-options {
   display: flex;
   margin: auto;
+  margin-top: 15px;
   color: white;
-  border: 0.7px solid white;
-  padding: 10px;
+  padding: 7px;
+  padding-top: 5px;
+  max-height: 30px;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 .chart-options li {
   padding-left: 10px;
   padding-right: 10px;
+  max-height: 18px;
 }
 
-.chart-options li:hover {
+.chart-options button:hover {
   color: #1ae9aa;
+  border-bottom: 3px solid #1ae9aa;
 }
 
 .title {
@@ -104,6 +108,7 @@
   margin-left: 285px;
   margin-top: 50px;
   color: white;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 .asset-details1 li {
@@ -119,6 +124,7 @@
   margin-left: 285px;
   margin-top: 30px;
   color: white;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 .asset-details2 li {
@@ -135,12 +141,104 @@
 }
 
 .buysell {
-  display: block;
-  width: 250px;
-  height: 400px;
-  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 325px;
+  box-shadow: 0.5px 0.5px 15px 1px black;
+  padding: 10px;
+  padding-top: 25px;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+
 }
 
+.buy-sell-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.buysell label {
+  color: white;
+  margin-left: 14px;
+}
+
+#amount {
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 35px;
+  margin-left: 75px;
+}
+
+#amount:focus {
+  border: 1px solid #f45531;
+  margin-top: 34px;
+}
+
+.marketprice {
+  color: white;
+  display:flex;
+  margin-top: 25px;
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+  margin-left: 14px;
+}
+
+.last-price {
+  margin-left: 40px;
+}
+
+.estimated {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 20px;
+}
+
+#cost{
+  width: 50px;
+  overflow-x: hidden;
+  color: #f45531;
+  font-size: 14px;
+}
+.buysell-button {
+  color: white;
+  font-size: 18px;
+}
+
+.buysell-button-active {
+  color: #f45531;
+  font-size: 18px;
+  box-shadow: 0.5px 0.5px 8px 0.7px #f45531;
+}
+
+
+.buysell-button:hover {
+  color: #f45531;
+  box-shadow: 0.5px 0.5px 8px 0.7px #f45531;
+}
+
+.submit-order {
+  display: block;
+  border-radius: 5px;
+  background-color: #21ce99;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto;
+  margin-top: 45px;
+  color: white;
+  font-size: 15px;
+}
+
+.submit-order:hover {
+  background-color: #1ae9aa;
+}
 
 .loader,
 .loader:after {

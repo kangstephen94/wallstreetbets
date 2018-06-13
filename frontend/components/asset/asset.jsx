@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../dashboard/navbar_container';
 import AssetChartContainer from './asset_chart_container';
-import SellBuyContainer from './buy_sell_container';
+import BuySellContainer from './buy_sell_container';
 
 
 class Asset extends React.Component {
@@ -44,12 +44,15 @@ class Asset extends React.Component {
       var industry = asset.industry;
       var sector = asset.sector;
     }
+    if (asset) {
+      var el = <BuySellContainer />;
+    }
 
     return (
       <div className="show-asset">
         <NavBarContainer />
         <div className="asset-content">
-          <h1>{name}</h1>
+          <h1 id="name">{name}</h1>
           <div className="buy-sell-flex">
             <div className="chart-container">
               <AssetChartContainer />
@@ -83,10 +86,10 @@ class Asset extends React.Component {
                 </ul>
               </div>
 
-
             </div>
-            <SellBuyContainer />
+             {el}
           </div>
+
           <ul className="asset-details1">
             <li>
               <p className="title">Company:</p>

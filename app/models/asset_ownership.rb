@@ -13,6 +13,6 @@
 #
 
 class AssetOwnership < ApplicationRecord
-  validates :asset_id, :portfolio_id, :amounnt, :price_purchased, :side, presence: true
+  validates :asset_id, :portfolio_id, :amount, :price_purchased, :side, presence: true
 
 end
