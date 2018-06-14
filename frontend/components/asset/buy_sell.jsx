@@ -16,6 +16,18 @@ class BuySell extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   update (e) {
     this.setState({amount: e.target.value});
   }
@@ -23,16 +35,18 @@ class BuySell extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.buyAsset(this.state);
+    this.setState({amount: 0});
   }
 
   handleBuySell (e) {
-    this.setState({side: e.target.value});
+    this.setState({side: e.target.value, amount: 0});
   }
 
   render () {
-    const {asset} = this.props;
+    const {asset, totalStock} = this.props;
     let el;
     let el2;
+
     if (this.state.side === "Buy") {
       el = (
         <div className="estimated">
@@ -41,7 +55,7 @@ class BuySell extends React.Component {
         </div>
       );
       el2 = (
-        <p className="buying-power">${this.props.currentUser.buying_power} Buying Power Available</p>
+        <p className="buying-power">${this.props.currentUser.buying_power.toFixed(2)} Buying Power Available</p>
 
       );
     } else {
@@ -52,7 +66,7 @@ class BuySell extends React.Component {
       </div>
       );
       el2 = (
-        <p className="buying-power">30 Shares Available</p>
+        <p className="buying-power">{totalStock} available shares</p>
       );
     }
     return (
@@ -72,7 +86,7 @@ class BuySell extends React.Component {
           </button>
       </div>
       <form className="shares">
-          <label for="amount">Shares</label>
+          <label htmlFor="amount">Shares</label>
             <input
               id='amount'
               type='text'
@@ -87,6 +101,7 @@ class BuySell extends React.Component {
       {el}
       <button onClick={this.handleSubmit} className="submit-order">Submit Order</button>
       {el2}
+      {this.renderErrors()}
       </div>
     );
   }

@@ -5,7 +5,7 @@
 #  id         :bigint(8)        not null, primary key
 #  symbol     :string           not null
 #  name       :string           not null
-#  last_price :integer          not null
+#  last_price :float            not null
 #  market_cap :bigint(8)        not null
 #  ipo_year   :string           not null
 #  sector     :string           not null
@@ -16,7 +16,5 @@
 
 class Asset < ApplicationRecord
   validates :symbol, :name, :last_price, :market_cap, :ipo_year, :sector, :industry, presence: true
-
-  
 
 end

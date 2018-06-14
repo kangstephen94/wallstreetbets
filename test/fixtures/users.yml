@@ -6,7 +6,7 @@
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  email           :string           not null
-#  buying_power    :integer          not null
+#  buying_power    :float            not null
 #  session_token   :string           not null
 #  password_digest :string
 #  created_at      :datetime         not null

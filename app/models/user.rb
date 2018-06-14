@@ -6,7 +6,7 @@
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  email           :string           not null
-#  buying_power    :integer          not null
+#  buying_power    :float            not null
 #  session_token   :string           not null
 #  password_digest :string
 #  created_at      :datetime         not null
@@ -21,6 +21,24 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   attr_reader :password
+
+  has_one :portfolio,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Portfolio
+
+  def update_buyingpower(asset_ownership)
+    amount = asset_ownership.amount
+    cost = asset_ownership.price_purchased
+    total_cost = (amount * cost).to_f
+    if asset_ownership.side == 'Buy'
+      updated_value = (self.buying_power - total_cost).to_f
+    else
+      updated_value = (self.buying_power + total_cost).to_f
+    end
+
+    self.update({buying_power: updated_value})
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

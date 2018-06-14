@@ -33,4 +33,22 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def valid_sell?(asset_ownership)
+    return true if asset_ownership.side == "Buy"
+    trade_asset_id = asset_ownership.asset_id
+    @total_stocks_available = AssetOwnership.where(asset_id: trade_asset_id, side: "Buy")
+    if @total_stocks_available.length > 0
+      @total_stocks_available = @total_stocks_available.pluck(:amount).reduce(:+)
+    else
+       @total_stocks_available = 0
+    end
+    @total_stocks_available > asset_ownership.amount ?  true : false
+  end
+
+  def valid_buy?(asset_ownership)
+    amount = asset_ownership.amount
+    cost = asset_ownership.price_purchased
+    total_cost = amount * cost
+    current_user.buying_power >= total_cost
+  end
 end

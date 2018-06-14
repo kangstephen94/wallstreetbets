@@ -94,7 +94,7 @@ class AssetChart extends React.Component {
          <li id="percentage">{`$${difference} (${percent}%)`}</li>
          <li id="date">{`${date}`}</li>
        </ul>
-       <AreaChart className='show-chart' width={650} height={350} data={data}
+       <AreaChart className='show-chart' width={680} height={350} data={data}
          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
          <defs>
            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -103,7 +103,7 @@ class AssetChart extends React.Component {
            </linearGradient>
          </defs>
          <XAxis hide={true} interval={0} dataKey="key" tick={false} />
-         <YAxis hide={true} domain={[dataMin => (Math.round(dataMin)*0.995), 'dataMax']}/>
+         <YAxis hide={true} domain={[dataMin => (Math.round(dataMin)*0.996), 'dataMax']}/>
          <Tooltip content={<CustomTooltip getValue={this.getValue}/>} />
          <Tooltip cursor={{ stroke: 'white', strokeWidth: 2 }} />
          <Area type="monotone" dataKey="value" stroke={color} fillOpacity={1} fill="url(#colorUv)" />

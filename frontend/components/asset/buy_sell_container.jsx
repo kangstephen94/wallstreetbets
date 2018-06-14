@@ -5,11 +5,13 @@ import {retrieveBuy} from '../../actions/asset_actions';
 
 const msp = (state, ownProps) => ({
   asset: state.entities.assets[ownProps.match.params.sym],
-  currentUser: state.session
+  currentUser: state.session,
+  errors: state.errors.buying_selling,
+  totalStock: state.entities.assetOwnership
   });
 
 const mdp = dispatch => ({
-  buyAsset: assetOwnership => dispatch(retrieveBuy(assetOwnership))
+  buyAsset: assetOwnership => dispatch(retrieveBuy(assetOwnership)),
 });
 
 export default withRouter(connect(msp, mdp)(BuySell));

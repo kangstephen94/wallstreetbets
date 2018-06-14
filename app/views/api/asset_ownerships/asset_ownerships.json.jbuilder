@@ -1,1 +1,4 @@
-json.extract! @assetOwnership, :asset_id, :portfolio_id, :amount, :price_purchased, :side
+  json.currentUser do
+    json.partial! "api/users/user", user: @user
+  end
+  json.total @total

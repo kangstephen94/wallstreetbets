@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_12_215856) do
+ActiveRecord::Schema.define(version: 2018_06_14_010107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_06_12_215856) do
     t.integer "asset_id", null: false
     t.integer "portfolio_id", null: false
     t.integer "amount", null: false
-    t.integer "price_purchased", null: false
+    t.float "price_purchased", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "side", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_06_12_215856) do
   create_table "assets", force: :cascade do |t|
     t.string "symbol", null: false
     t.string "name", null: false
-    t.integer "last_price", null: false
+    t.float "last_price", null: false
     t.bigint "market_cap", null: false
     t.string "ipo_year", null: false
     t.string "sector", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_06_12_215856) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "portfolio_value", null: false
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
@@ -50,13 +51,29 @@ ActiveRecord::Schema.define(version: 2018_06_12_215856) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
-    t.integer "buying_power", null: false
+    t.float "buying_power", null: false
     t.string "session_token", null: false
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
+  end
+
+  create_table "watchlist_items", force: :cascade do |t|
+    t.integer "asset_id", null: false
+    t.integer "watchlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_id"], name: "index_watchlist_items_on_asset_id"
+    t.index ["watchlist_id"], name: "index_watchlist_items_on_watchlist_id"
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 
 end

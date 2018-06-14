@@ -6,7 +6,7 @@
 #  asset_id        :integer          not null
 #  portfolio_id    :integer          not null
 #  amount          :integer          not null
-#  price_purchased :integer          not null
+#  price_purchased :float            not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  side            :string           not null
