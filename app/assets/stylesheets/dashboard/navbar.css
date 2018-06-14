@@ -1,9 +1,9 @@
 .dash-nav {
-  position: relative;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
-  z-index: 2;
+  z-index: 1;
   background-color: #1b1b1d;
   vertical-align: middle;
 }
@@ -47,6 +47,7 @@
 
 #currentuser {
   margin-right: 30px;
+  width: 102px;
 }
 
 

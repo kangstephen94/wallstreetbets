@@ -65,8 +65,7 @@ ActiveRecord::Schema.define(version: 2018_06_14_010107) do
     t.integer "watchlist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["asset_id"], name: "index_watchlist_items_on_asset_id"
-    t.index ["watchlist_id"], name: "index_watchlist_items_on_watchlist_id"
+    t.index ["asset_id", "watchlist_id"], name: "index_watchlist_items_on_asset_id_and_watchlist_id", unique: true
   end
 
   create_table "watchlists", force: :cascade do |t|

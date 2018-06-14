@@ -5,7 +5,6 @@ class CreateWatchlistItems < ActiveRecord::Migration[5.2]
       t.integer :watchlist_id, null: false
       t.timestamps
     end
-    add_index :watchlist_items, :asset_id
-    add_index :watchlist_items, :watchlist_id
+    add_index :watchlist_items, [:asset_id, :watchlist_id], unique: true
   end
 end

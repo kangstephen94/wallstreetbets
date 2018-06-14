@@ -14,22 +14,30 @@ class BuySell extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBuySell = this.handleBuySell.bind(this);
     this.update = this.update.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+      this.props.clearErrors();
+    }
   }
 
   componentDidMount () {
     this.props.buyAsset({
-      asset_id: 1,
+      asset_id: this.props.asset.id,
       portfolio_id: 11,
       amount: 0,
       price_purchased: 0,
       side: 'Buy'
     });
+    this.props.retrieveWatchlist();
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="buy-sell-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -47,22 +55,28 @@ class BuySell extends React.Component {
     e.preventDefault();
     this.props.buyAsset(this.state);
     this.setState({amount: 0});
+    this.props.clearErrors();
   }
 
   handleBuySell (e) {
     this.setState({side: e.target.value, amount: 0});
+    this.props.clearErrors();
   }
 
-  handleClick (e) {
+  handleRemove(e) {
     e.preventDefault();
-    this.props.addToWatchlist(this.props.asset);
+    this.props.removeFromWatchlist(this.props.asset.id);
+  }
+
+  handleAdd (e) {
+    e.preventDefault();
+    this.props.addToWatchlist(this.props.asset.id);
   }
 
   render () {
-    const {asset, totalStock} = this.props;
+    const {asset, totalStock, watchlistItems} = this.props;
     let el;
     let el2;
-
     if (this.state.side === "Buy") {
       el = (
         <div className="estimated">
@@ -85,8 +99,29 @@ class BuySell extends React.Component {
         <p className="buying-power">{totalStock} available shares</p>
       );
     }
+
+    let watchlistButton;
+    if (watchlistItems && watchlistItems[asset.id]) {
+      watchlistButton = (
+      <button
+        className="add-watchlist-item"
+        onClick={this.handleRemove}
+        >Remove from Watchlist
+      </button>
+    );
+    } else {
+      watchlistButton = (
+      <button
+        className="add-watchlist-item"
+        onClick={this.handleAdd}
+        >Add to Watchlist
+      </button>
+    );
+    }
+
+
     return (
-      <div>
+      <div className="buy-sell-all">
       <div className="buysell">
         <div className='buy-sell-option'>
         <button
@@ -117,14 +152,10 @@ class BuySell extends React.Component {
       </div>
       {el}
       <button onClick={this.handleSubmit} className="submit-order">Submit Order</button>
-      {el2}
       {this.renderErrors()}
+      {el2}
       </div>
-      <button
-        className="add-watchlist-item"
-        onClick={this.handleClick}
-        >Add to Watchlist
-      </button>
+      {watchlistButton}
       </div>
     );
   }

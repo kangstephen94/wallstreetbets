@@ -10,5 +10,11 @@
 #
 
 class WatchlistItem < ApplicationRecord
-  validates :asset_id, :watchlist_id, null: false
+  validates :asset_id, :watchlist_id, presence: true
+  validates :watchlist_id, uniqueness: {scope: :asset_id}
+
+  belongs_to :asset,
+  primary_key: :id,
+  foreign_key: :asset_id,
+  class_name: :Asset
 end

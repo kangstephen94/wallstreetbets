@@ -1,5 +1,7 @@
 import React from 'react';
 import NavBarContainer from './navbar_container';
+import WatchListContainer  from './watchlist_container';
+import PortfolioContainer  from './portfolio_container';
 
 class Dashboard extends React.Component {
   constructor (props) {
@@ -9,7 +11,7 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount () {
-    setTimeout(this.changeState, 1500);
+    setTimeout(this.changeState, 1200);
   }
 
   changeState () {
@@ -20,11 +22,15 @@ class Dashboard extends React.Component {
   render () {
     let el;
     if (this.state.isLoaded) {
-      el = (<div className="dashboard-container">
+      el = (
       <div className='dashboard'>
         <NavBarContainer />
-      </div>
-    </div> );
+        <div className="empty-div"></div>
+        <div className='port-watch-flex'>
+        <PortfolioContainer />
+        <WatchListContainer />
+        </div>
+      </div>);
     } else {
       el = (<div className="loader2">Loading...</div>);
     }

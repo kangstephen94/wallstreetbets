@@ -1,0 +1,69 @@
+html {
+  background-color: #1b1b1d;
+}
+
+body {
+  background-color: #1b1b1d;
+}
+
+
+.dashboard {
+  height: 100%;
+  background-color: #1b1b1d;
+}
+
+.watchlist {
+  display:block;
+  color: white;
+  width: 275px;
+  height: 650px;
+  box-shadow: 0.2px 0.2px 15px 0.7px black;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+  padding-top: 15px;
+}
+
+ .port-watch-flex {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+ }
+
+.portfolio {
+  display: block;
+  width: 600px;
+  border: 1px solid white;
+  color:white;
+}
+
+.empty-div {
+  height: 200px;
+}
+
+.watchlist-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.watchlist-item:hover {
+  background-color: #0d0d0d;
+}
+
+.watchlist-title {
+  margin-left: 22px;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.watchlist-item-detail {
+  padding: 20px 12px 20px 10px;
+  width: 82.31px;
+  font-size: 15px;
+}
+
+
+.watchlist-item-detail-symbol {
+  color: #f45531;
+  padding: 20px 0px 20px 25px;
+  width: 82.31px;
+  font-size: 15px;
+}

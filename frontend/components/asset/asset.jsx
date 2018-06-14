@@ -20,7 +20,7 @@ class Asset extends React.Component {
   }
 
   componentWillMount () {
-    setTimeout(this.changeState, 1500);
+    setTimeout(this.changeState, 1000);
   }
 
   componentWillReceiveProps (nextProps) {

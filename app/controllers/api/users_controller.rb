@@ -5,7 +5,8 @@ class Api::UsersController < ApplicationController
     if @user.save
       @portfolio = Portfolio.new({id: @user.id, user_id: @user.id, portfolio_value: 0})
       @portfolio.save
-      @watchlist = Watchlist.new({user_id: @user.id})
+      @watchlist = Watchlist.new({id: @user.id, user_id: @user.id})
+      @watchlist.save
       login(@user)
       render "api/users/show"
     else

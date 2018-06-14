@@ -1,3 +1,4 @@
+
 #root {
   width: 100%;
 }
@@ -6,14 +7,14 @@
   width: 100%;
   height: 100%;
   background-color: #1b1b1d;
+  position: relative;
 }
 
 .asset-content {
   width: 70%;
   margin: auto;
   margin-left: 210px;;
-  display: flex;
-  flex-direction: column;
+  padding-top: 100px;
 }
 
 #name {
@@ -27,8 +28,6 @@
 
 
 .chart-container {
-  display: flex;
-  flex-direction: column;
   margin: auto;
   margin-left: 210px;
 }
@@ -37,13 +36,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  max-height: 468px;
 }
 
 .custom-tooltip {
   color: white;
   line-height: 15px;
-  display: flex;
-  flex-direction: column;
 }
 
 
@@ -54,15 +52,17 @@
 
 #price {
   padding-top: 15px;
-  font-size: 30px;
+  font-size: 32px;
   font-family: 'Roboto', sans-serif;
 }
 
 #date {
   position: absolute;
-  top: 595px;
+  top: 612px;
   left: 550px;
   font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  animation: fadein 3s;
 }
 
 .option-container {
@@ -140,12 +140,13 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-  height: 360px;
+  height: 370px;
   box-shadow: 0.5px 0.5px 15px 1px black;
   padding: 10px;
   padding-top: 25px;
   padding-bottom: 15px;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
+  font-size: 14px;
 
 }
 
@@ -153,6 +154,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: 18px;
 }
 
 .shares {
@@ -202,7 +204,7 @@
 }
 
 #cost{
-  width: 65px;
+  width: 68px;
   overflow-x: hidden;
   color: #f45531;
   font-size: 14px;
@@ -222,7 +224,8 @@
 
 .buysell-button:hover {
   color: #f45531;
-  box-shadow: 0.5px 0.5px 8px 0.7px #f45531;
+  box-shadow: 0.5px 0.5px 5px 0.7px #f45531;
+  transition: all .25s ease;
 }
 
 .submit-order {
@@ -262,6 +265,26 @@
 .add-watchlist-item:hover {
   border-bottom: 3px solid #f45531;
 }
+
+.buy-sell-errors {
+  color: red;
+  font-size: 12px;
+  margin: auto;
+  margin-top: 8px;
+  animation: fadein 4s;
+}
+.buy-sell-all {
+  height: 471px;
+}
+
+
+
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+
 
 .loader,
 .loader:after {

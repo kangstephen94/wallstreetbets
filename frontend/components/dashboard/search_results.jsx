@@ -8,10 +8,12 @@ export const SearchResults = (props) => {
     <ul id='search-result' style={{display: 'none'}} >
       {searchResults.map (asset => {
         return (
+          <Link to={`/assets/${asset.symbol}`} className='searched-assets' key={asset.id} >
           <li className="search-elements">
-            <Link to={`/assets/${asset.symbol}`} className='searched-assets' key={asset.id} >{asset.name}</Link>
+            {asset.name}
             <p>{asset.symbol}</p>
           </li>
+          </Link>
         );
       })
     }
