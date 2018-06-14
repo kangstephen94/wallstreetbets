@@ -163,14 +163,18 @@
   max-height: 25px;
 }
 
+.shares label {
+  width: 80px;
+}
+
 
 #amount {
   background-color: black;
   padding-left: 20px;
-  width: 40px;
+  width: 32px;
   height: 25px;
   border-radius: 5px;
-  margin-left: 38px;
+  margin-left: -115px;
 }
 
 #amount:focus {
@@ -187,6 +191,7 @@
 }
 
 .last-price {
+  width: 90px;
 }
 
 .estimated {
@@ -197,7 +202,7 @@
 }
 
 #cost{
-  width: 72px;
+  width: 65px;
   overflow-x: hidden;
   color: #f45531;
   font-size: 14px;
@@ -244,6 +249,18 @@
   font-size: 13px;
   border-top: 1px solid black;
   padding-top: 10px;
+}
+
+.add-watchlist-item {
+  display: block;
+  color: #f45531;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+.add-watchlist-item:hover {
+  border-bottom: 3px solid #f45531;
 }
 
 .loader,

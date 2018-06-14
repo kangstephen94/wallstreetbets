@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BuySell from './buy_sell';
 import { Link, withRouter } from 'react-router-dom';
-import {retrieveBuy} from '../../actions/asset_actions';
+import {retrieveBuy, addToWatchlist} from '../../actions/asset_actions';
 
 const msp = (state, ownProps) => ({
   asset: state.entities.assets[ownProps.match.params.sym],
@@ -12,6 +12,7 @@ const msp = (state, ownProps) => ({
 
 const mdp = dispatch => ({
   buyAsset: assetOwnership => dispatch(retrieveBuy(assetOwnership)),
+  addToWatchlist: asset => dispatch(addToWatchlist(asset))
 });
 
 export default withRouter(connect(msp, mdp)(BuySell));

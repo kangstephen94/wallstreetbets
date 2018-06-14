@@ -14,6 +14,17 @@ class BuySell extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBuySell = this.handleBuySell.bind(this);
     this.update = this.update.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount () {
+    this.props.buyAsset({
+      asset_id: 1,
+      portfolio_id: 11,
+      amount: 0,
+      price_purchased: 0,
+      side: 'Buy'
+    });
   }
 
   renderErrors() {
@@ -40,6 +51,11 @@ class BuySell extends React.Component {
 
   handleBuySell (e) {
     this.setState({side: e.target.value, amount: 0});
+  }
+
+  handleClick (e) {
+    e.preventDefault();
+    this.props.addToWatchlist(this.props.asset);
   }
 
   render () {
@@ -70,6 +86,7 @@ class BuySell extends React.Component {
       );
     }
     return (
+      <div>
       <div className="buysell">
         <div className='buy-sell-option'>
         <button
@@ -102,6 +119,12 @@ class BuySell extends React.Component {
       <button onClick={this.handleSubmit} className="submit-order">Submit Order</button>
       {el2}
       {this.renderErrors()}
+      </div>
+      <button
+        className="add-watchlist-item"
+        onClick={this.handleClick}
+        >Add to Watchlist
+      </button>
       </div>
     );
   }

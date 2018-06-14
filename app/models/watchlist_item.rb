@@ -10,4 +10,5 @@
 #
 
 class WatchlistItem < ApplicationRecord
+  validates :asset_id, :watchlist_id, null: false
 end

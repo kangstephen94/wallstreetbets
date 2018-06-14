@@ -9,4 +9,5 @@
 #
 
 class Watchlist < ApplicationRecord
+  validates :user_id, null: false
 end

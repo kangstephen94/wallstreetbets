@@ -28,3 +28,11 @@ export const buyAsset = (assetOwnership) => {
     data: {assetOwnership}
   });
 };
+
+export const addWatchlistItem = asset => {
+  return $.ajax({
+    method: "POST",
+    url: '/api/watchlist_items',
+    data: {asset}
+  });
+};
