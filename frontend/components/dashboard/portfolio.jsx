@@ -29,7 +29,7 @@ class Portfolio extends React.Component {
     let assets;
     let holdings2;
     let el;
-    let total='$100000';
+    let total='100000';
     let currentPrices;
     if ((payload && !Number.isInteger(payload)) && (!this.isEmpty(watchlist)))
     {

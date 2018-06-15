@@ -30,8 +30,8 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "webpack",
-    "start": "webpack -d --watch"
+    "postinstall": "webpack --optimize-minimize",
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",

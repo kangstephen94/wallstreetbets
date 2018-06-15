@@ -21,5 +21,3 @@ csv.each do |row|
   t.save
   puts "#{t.name}, #{t.symbol} saved"
 end
-
-puts "There are now #{Asset.count} rows in the transactions table"
