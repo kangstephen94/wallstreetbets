@@ -14,6 +14,7 @@ class Dashboard extends React.Component {
     setTimeout(this.changeState, 1200);
   }
 
+
   changeState () {
     this.setState({isLoaded: true});
   }

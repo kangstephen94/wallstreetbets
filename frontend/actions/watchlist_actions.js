@@ -7,7 +7,7 @@ export const CLEAR_WATCHLIST = "CLEAR_WATCHLIST";
 
 
 export const retrieveWatchlist = () => dispatch => (
-  getWatchlist().then( watchlist => dispatch(receiveWatchlist(watchlist)))
+  getWatchlist().then( payload => dispatch(receiveWatchlist(payload)))
 );
 
 export const addToWatchlist = id => dispatch => (
@@ -18,9 +18,9 @@ export const removeFromWatchlist = id => dispatch => (
   removeWatchlistItem(id).then( () => dispatch(clearWatchlist()))
 );
 
-export const receiveWatchlist = watchlist => ({
+export const receiveWatchlist = payload => ({
   type: RECEIVE_WATCHLIST,
-  watchlist
+  payload
 });
 
 

@@ -24,6 +24,21 @@ class Api::AssetOwnershipsController < ApplicationController
     end
   end
 
+  def index
+    portfolio = Portfolio.find(current_user.id)
+    @assets_ids = current_user.portfolio.asset_ownerships.map {|asset_ownership| asset_ownership.asset.id}.uniq
+    @assets = @assets_ids.map{|id| Asset.find(id)}
+    @buying_power = current_user.buying_power
+    @portfolio_value = portfolio.portfolio_value
+    @result = {}
+    @assets_ids.each do |id|
+      @result[id] = portfolio.total_shares(id)
+    end
+    if @assets_ids.length != 0
+      render "api/asset_ownerships/holdings"
+    end
+  end
+
 private
   def asset_params
     params.require(:assetOwnership).permit(:asset_id, :portfolio_id, :amount, :price_purchased, :side)

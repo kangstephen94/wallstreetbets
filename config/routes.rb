@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :asset_ownerships, only: [:create]
+    resources :asset_ownerships, only: [:create, :index]
     resources :watchlist_items, only: [:create, :destroy]
     resources :watchlists, only: [:index]
     get '/assets/:sym', :to => 'assets#show'

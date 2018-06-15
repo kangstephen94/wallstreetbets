@@ -32,6 +32,7 @@ class Asset extends React.Component {
   }
 
   componentWillUnmount () {
+    console.log('hello');
     this.props.clearData();
   }
 

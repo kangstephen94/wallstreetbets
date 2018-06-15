@@ -15,4 +15,9 @@
 class AssetOwnership < ApplicationRecord
   validates :asset_id, :portfolio_id, :amount, :price_purchased, :side, presence: true
 
+  belongs_to :asset,
+  primary_key: :id,
+  foreign_key: :asset_id,
+  class_name: :Asset
+  
 end

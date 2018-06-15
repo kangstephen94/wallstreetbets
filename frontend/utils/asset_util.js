@@ -21,6 +21,14 @@ export const getData = (sym, func) => {
   });
 };
 
+export const getAllData = (syms) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/data/`,
+    data: {syms}
+  });
+};
+
 export const buyAsset = (assetOwnership) => {
   return $.ajax({
     method: "POST",

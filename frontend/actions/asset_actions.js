@@ -1,4 +1,4 @@
-import {search, getAsset, getData, buyAsset, getFillData} from '../utils/asset_util';
+import {search, getAsset, getData, buyAsset, getFillData, getAllData} from '../utils/asset_util';
 import {receiveCurrentUser} from './session_actions';
 
 export const SEARCHASSETS = "SEARCHASSETS";
@@ -23,6 +23,7 @@ export const searchAssets = query => dispatch => (
 export const retrieveData = (sym, func) => dispatch => (
   getData(sym, func).then( payload => dispatch(receiveData(payload)))
 );
+
 
 export const retrieveBuy = assetOwnership => dispatch => (
   buyAsset(assetOwnership).then( payload => {

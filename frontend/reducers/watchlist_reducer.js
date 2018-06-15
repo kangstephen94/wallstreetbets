@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const WatchlistReducer = (state={}, action) => {
   switch (action.type) {
     case RECEIVE_WATCHLIST:
-      return merge({}, action.watchlist);
+      return merge({}, action.payload);
     case RECEIVE_WATCHLIST_ITEM:
       return merge({}, action.watchlistItem);
     case CLEAR_WATCHLIST:

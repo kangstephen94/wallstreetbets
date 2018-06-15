@@ -4,23 +4,35 @@ import { Link, withRouter } from 'react-router-dom';
 class WatchList extends React.Component  {
   constructor(props) {
     super(props);
+    this.id = null;
   }
 
-  componentWillMount () {
+  componentDidMount () {
     this.props.retrieveWatchlist();
+    this.id = setInterval(() => this.props.retrieveWatchlist(), 25000);
   }
+
+  componentWillUnmount () {
+    clearInterval(this.id);
+    this.id = null;
+  }
+
 
   render () {
-    const {watchlist} = this.props;
-    const el = watchlist.map ( watchlist_item => (
-      <Link to={`/assets/${watchlist_item.symbol}`}>
-      <li className="watchlist-item">
-        <div className="watchlist-item-detail-symbol">{watchlist_item.symbol}</div>
+    let el;
+    const {payload} = this.props;
+    if (Object.keys(payload).length !== 0) {
+      const data = payload.data;
+    el = Object.values(payload.watchlist).map ( (watchlistItem,idx) => (
+      <Link key={idx} to={`/assets/${watchlistItem.symbol}`}>
+      <li key={idx} className="watchlist-item">
+        <div className="watchlist-item-detail-symbol">{watchlistItem.symbol}</div>
         <div className="watchlist-item-detail">Watching</div>
-        <div className="watchlist-item-detail">${watchlist_item.last_price}</div>
+        <div className="watchlist-item-detail">{Number(data[watchlistItem.symbol]["2. price"])}</div>
       </li>
     </Link>
     ));
+  }
     return (
       <ul className="watchlist">
         <li className="watchlist-title">Watchlist</li>

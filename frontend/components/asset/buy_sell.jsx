@@ -27,7 +27,7 @@ class BuySell extends React.Component {
   componentDidMount () {
     this.props.buyAsset({
       asset_id: this.props.asset.id,
-      portfolio_id: 11,
+      portfolio_id: 2000,
       amount: 0,
       price_purchased: 0,
       side: 'Buy'
@@ -101,7 +101,7 @@ class BuySell extends React.Component {
     }
 
     let watchlistButton;
-    if (watchlistItems && watchlistItems[asset.id]) {
+    if (Object.keys(watchlistItems).length !== 0 && watchlistItems.watchlist[asset.id]) {
       watchlistButton = (
       <button
         className="add-watchlist-item"
