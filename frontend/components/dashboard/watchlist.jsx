@@ -9,7 +9,7 @@ class WatchList extends React.Component  {
 
   componentDidMount () {
     this.props.retrieveWatchlist();
-    this.id = setInterval(() => this.props.retrieveWatchlist(), 25000);
+    this.id = setInterval(() => this.props.retrieveWatchlist(), 35000);
   }
 
   componentWillUnmount () {
@@ -21,14 +21,14 @@ class WatchList extends React.Component  {
   render () {
     let el;
     const {payload} = this.props;
-    if (Object.keys(payload).length !== 0) {
+    if ( payload && Object.keys(payload).length > 1) {
       const data = payload.data;
     el = Object.values(payload.watchlist).map ( (watchlistItem,idx) => (
       <Link key={idx} to={`/assets/${watchlistItem.symbol}`}>
       <li key={idx} className="watchlist-item">
         <div className="watchlist-item-detail-symbol">{watchlistItem.symbol}</div>
         <div className="watchlist-item-detail">Watching</div>
-        <div className="watchlist-item-detail">{Number(data[watchlistItem.symbol]["2. price"])}</div>
+        <div className="watchlist-item-detail">${Number(data[watchlistItem.symbol]["2. price"])}</div>
       </li>
     </Link>
     ));

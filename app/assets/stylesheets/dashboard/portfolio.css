@@ -1,3 +1,66 @@
 .holdings {
   display: flex;
 }
+
+.holdings-title-header {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+.holdings-asset {
+  padding: 20px 12px 20px 10px;
+  width: 175px;
+  font-size: 13px;
+  margin-left: 45px;
+}
+
+.holdings-title {
+  padding: 20px 12px 20px 10px;
+  width: 200px;
+  font-size: 15.5px;
+  margin-left: 45px;
+  color: #f45531;
+}
+
+.portfolio-chart {
+  display: block;
+  width: 70%;
+  color:white;
+  margin: auto;
+  margin-top: 30px;
+  box-shadow: 0.2px 0.2px 15px 0.7px black;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+.piechart-container {
+  margin-top: 50px;
+}
+.piechart-container p{
+  color: white;
+  text-align: center;
+}
+
+.piecharts {
+  display:flex;
+  margin: auto;
+  padding-left: 200px;
+}
+
+body {
+  margin: 0;
+}
+
+.portfolio {
+  margin-right: 500px;
+}
+
+.total-assets {
+  font-size: 38px;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+  color: #f45531;
+  margin: auto;
+  margin-left: 250px;
+}
+ #portfolio-total{
+    color:white;
+ }

@@ -10,6 +10,7 @@ class loginForm extends React.Component {
 
   componentWillUnmount() {
     this.props.clearErrors();
+    this.props.retrieveWatchlist();
   }
 
   handleSubmit(e) {

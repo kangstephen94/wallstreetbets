@@ -54,6 +54,7 @@ class BuySell extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.buyAsset(this.state);
+    this.handleAdd();
     this.setState({amount: 0});
     this.props.clearErrors();
   }
@@ -63,13 +64,11 @@ class BuySell extends React.Component {
     this.props.clearErrors();
   }
 
-  handleRemove(e) {
-    e.preventDefault();
+  handleRemove() {
     this.props.removeFromWatchlist(this.props.asset.id);
   }
 
-  handleAdd (e) {
-    e.preventDefault();
+  handleAdd () {
     this.props.addToWatchlist(this.props.asset.id);
   }
 

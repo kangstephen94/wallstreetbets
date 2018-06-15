@@ -10,38 +10,40 @@ body {
 .dashboard {
   height: 100%;
   background-color: #1b1b1d;
+  padding-bottom: 300px;
 }
 
 .watchlist {
   display:block;
   color: white;
-  width: 275px;
+  width: 15%;
   height: 650px;
   box-shadow: 0.2px 0.2px 15px 0.7px black;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
   padding-top: 15px;
+  position: fixed;
+  right: 250px;
+  top: 150px;
+  min-width: 220px;
+  overflow: auto;
 }
 
  .port-watch-flex {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   background-color: #1b1b1d;
  }
 
-.portfolio {
-  display: block;
-  width: 600px;
-  border: 1px solid white;
-  color:white;
-}
-
 .empty-div {
-  height: 200px;
+  height: 150px;
 }
 
 .watchlist-item {
   display: flex;
   flex-direction: row;
+  position: relative;
+  width: 100%
 }
 
 .watchlist-item:hover {
@@ -56,7 +58,7 @@ body {
 
 .watchlist-item-detail {
   padding: 20px 12px 20px 10px;
-  width: 82.31px;
+  width: 35%;
   font-size: 15px;
 }
 
@@ -64,6 +66,6 @@ body {
 .watchlist-item-detail-symbol {
   color: #f45531;
   padding: 20px 0px 20px 25px;
-  width: 82.31px;
+  width: 35%;
   font-size: 15px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { PieChart, Pie, AreaChart, Area, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label, CartesianAxis } from 'recharts';
+import  TwoLevelPieChartContainer from './piechart';
+import  TwoLevelPieChartContainer2 from './piechart2';
 
 class Portfolio extends React.Component {
   constructor(props){
@@ -11,30 +12,62 @@ class Portfolio extends React.Component {
   }
 
   render () {
-    const {payload} = this.props;
+    const {payload, watchlist} = this.props;
+    let buyingPower;
+    let portfolioValue;
     let assetIds;
     let holdings;
     let assets;
+    let holdings2;
     let el;
-    if (payload && Object.keys(payload).length !== 0) {
-      assetIds = Object.keys(payload.holdings);
-      assets = payload.assets;
-      holdings = payload.holdings;
-
-      el = assetIds.map (id => (
+    let total;
+    let currentPrices;
+    if ((payload && Object.keys(payload).length !== 0) &&
+    (watchlist && Object.keys(watchlist).length !== 0))
+    {
+      assets = Object.values(payload.assets);
+      holdings = Object.values(payload.holdings);
+      holdings2 = payload.holdings2;
+      buyingPower = payload.buying_power;
+      portfolioValue = payload.portfolio_value;
+      total = buyingPower + portfolioValue;
+      currentPrices = watchlist.data;
+      el = assets.map (asset => (
         <li className="holdings">
-          <div>{assets[id].name}</div>
-          <div>{assets[id].symbol}</div>
-          <div>{holdings[id]}</div>
+          <div className="holdings-asset">{asset.name}</div>
+          <div className="holdings-asset">{asset.symbol}</div>
+          <div className="holdings-asset">${asset.last_price}</div>
+          <div className="holdings-asset">${Number.parseFloat(currentPrices[asset.symbol]["2. price"])}</div>
+          <div className="holdings-asset">{((((currentPrices[asset.symbol]["2. price"])/asset.last_price)-1)*100).toPrecision(2)}%</div>
+          <div className="holdings-asset">{holdings2[asset.id]}</div>
         </li>
       ));
     }
 
 
     return (
-      <ul className='portfolio'>
+      <div className='portfolio'>
+        <div className="portfolio-details">
+          <h1 className='total-assets'>Current Portfolio Value
+             <p id="portfolio-total">${total}</p>
+           </h1>
+        </div>
+        <div className='piecharts'>
+        <TwoLevelPieChartContainer/>
+        <TwoLevelPieChartContainer2/>
+        </div>
+      <ul className='portfolio-chart'>
+        <li className='holdings-title-header'>
+      <div className="holdings-title">Company</div>
+      <div className="holdings-title">Symbol</div>
+      <div className="holdings-title">Purchase Price</div>
+      <div className="holdings-title">Current Price</div>
+      <div className="holdings-title">Percent Gain/Loss</div>
+      <div className="holdings-title">Shares</div>
+      </li>
         {el}
       </ul>
+    </div>
     );
   }
 }

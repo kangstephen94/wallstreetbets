@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { login, receiveErrors } from '../../actions/session_actions';
+import { retrieveWatchlist } from '../../actions/watchlist_actions';
 import loginForm from './login_form';
 
 const msp = state => ({

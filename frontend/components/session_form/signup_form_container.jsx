@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { createNewUser, receiveErrors } from '../../actions/session_actions';
+import { retrieveWatchlist } from '../../actions/watchlist_actions';
 import signupForm from './signup_form';
 
 const msp = state => ({
@@ -10,6 +11,7 @@ const msp = state => ({
 const mdp = dispatch => ({
   createNewUser: formUser => dispatch(createNewUser(formUser)),
   clearErrors: () => dispatch(receiveErrors([])),
+  receiveWatchlist: () => dispatch(retrieveWatchlist([])),
 });
 
 export default connect(msp, mdp)(signupForm);
