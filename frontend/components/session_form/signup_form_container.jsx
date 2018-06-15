@@ -11,7 +11,7 @@ const msp = state => ({
 const mdp = dispatch => ({
   createNewUser: formUser => dispatch(createNewUser(formUser)),
   clearErrors: () => dispatch(receiveErrors([])),
-  receiveWatchlist: () => dispatch(retrieveWatchlist([])),
+  retrieveWatchlist: () => dispatch(retrieveWatchlist([])),
 });
 
 export default connect(msp, mdp)(signupForm);

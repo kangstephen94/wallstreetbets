@@ -1,6 +1,7 @@
 import React from 'react';
 import  TwoLevelPieChartContainer from './piechart';
 import  TwoLevelPieChartContainer2 from './piechart2';
+import { Link, withRouter } from 'react-router-dom';
 
 class Portfolio extends React.Component {
   constructor(props){
@@ -9,6 +10,14 @@ class Portfolio extends React.Component {
 
   componentDidMount () {
     this.props.retrieveHoldings();
+  }
+
+  isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
   }
 
   render () {
@@ -20,10 +29,9 @@ class Portfolio extends React.Component {
     let assets;
     let holdings2;
     let el;
-    let total;
+    let total='$100000';
     let currentPrices;
-    if ((payload && Object.keys(payload).length !== 0) &&
-    (watchlist && Object.keys(watchlist).length !== 0))
+    if ((payload && !Number.isInteger(payload)) && (!this.isEmpty(watchlist)))
     {
       assets = Object.values(payload.assets);
       holdings = Object.values(payload.holdings);
@@ -33,6 +41,7 @@ class Portfolio extends React.Component {
       total = buyingPower + portfolioValue;
       currentPrices = watchlist.data;
       el = assets.map (asset => (
+        <Link to={`/assets/${asset.symbol}`}>
         <li className="holdings">
           <div className="holdings-asset">{asset.name}</div>
           <div className="holdings-asset">{asset.symbol}</div>
@@ -41,7 +50,10 @@ class Portfolio extends React.Component {
           <div className="holdings-asset">{((((currentPrices[asset.symbol]["2. price"])/asset.last_price)-1)*100).toPrecision(2)}%</div>
           <div className="holdings-asset">{holdings2[asset.id]}</div>
         </li>
+      </Link>
       ));
+    } else {
+      el = <div>Loading...</div>;
     }
 
 

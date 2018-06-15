@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarContainer from '../dashboard/navbar_container';
 import AssetChartContainer from './asset_chart_container';
 import BuySellContainer from './buy_sell_container';
+import PriceDataContainer from './price_data_container';
 
 
 class Asset extends React.Component {
@@ -34,6 +35,7 @@ class Asset extends React.Component {
   componentWillUnmount () {
     console.log('hello');
     this.props.clearData();
+    this.props.retrieveWatchlist();
   }
 
   componentDidMount () {
@@ -46,9 +48,17 @@ class Asset extends React.Component {
     this.props.retrieveData(this.props.match.params.sym, e.target.value);
   }
 
+  isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+  }
+
 
   render () {
-    const {asset} = this.props;
+    const {asset, data} = this.props;
     if (asset) {
       var name = asset.name;
       var symbol = asset.symbol;
@@ -67,6 +77,13 @@ class Asset extends React.Component {
       );
     }
 
+    let el2;
+     if (this.isEmpty(data)) {
+       el2 = <div></div>;
+     } else {
+       el2 = <PriceDataContainer />;
+     }
+
     return (
 
       <div className="show-asset">
@@ -75,6 +92,7 @@ class Asset extends React.Component {
           <h1 id="name">{name}</h1>
           <div className="buy-sell-flex">
             <div className="chart-container">
+              {el2}
               <AssetChartContainer />
 
               <div className="option-container">

@@ -28,6 +28,11 @@ body {
   overflow: auto;
 }
 
+.watchlist:hover {
+  box-shadow: 0.2px 0.2px 15px 0.7px #f45531;
+  transition: all 0.5s linear;
+}
+
  .port-watch-flex {
    display: flex;
    flex-direction: row;

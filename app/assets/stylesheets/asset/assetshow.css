@@ -39,30 +39,25 @@
   max-height: 468px;
 }
 
-.custom-tooltip {
-  color: white;
-  line-height: 15px;
-}
-
-
-#percentage {
+.price_change {
   padding-top: 14px;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
+  color: white;
 }
 
-#price {
+.pointed_price {
   padding-top: 15px;
   font-size: 34px;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
+  color: white;
+  font-weight: bold;
 }
 
 #date {
-  position: absolute;
-  top: 612px;
-  left: 550px;
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   animation: fadein 3s;
+  color: white;
 }
 
 .option-container {

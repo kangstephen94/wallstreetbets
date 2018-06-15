@@ -10,7 +10,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   login: formUser => dispatch(login(formUser)),
-  clearErrors: () => dispatch(receiveErrors([]))
+  clearErrors: () => dispatch(receiveErrors([])),
+  retrieveWatchlist: () => dispatch(retrieveWatchlist())
 });
 
 export default connect(msp, mdp)(loginForm);

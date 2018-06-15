@@ -5,6 +5,7 @@ import assetReducer from './asset_reducer';
 import dataReducer from './data_reducer';
 import assetOwnershipReducer from './asset_ownership_reducer';
 import WatchlistReducer from './watchlist_reducer';
+import customToolTipReducer from './custom_tool_tip_reducer';
 
 export default combineReducers({
   users: usersReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   data: dataReducer,
   searchedAssets: searchReducer,
   assetOwnership: assetOwnershipReducer,
-  watchlist: WatchlistReducer
+  watchlist: WatchlistReducer,
+  tooltip: customToolTipReducer
 });
