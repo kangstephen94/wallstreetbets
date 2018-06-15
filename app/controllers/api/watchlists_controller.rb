@@ -6,7 +6,9 @@ class Api::WatchlistsController < ApplicationController
     symbols = @watchlist_items.map do |watchlist_item|
       watchlist_item.asset.symbol
     end.flatten.join(',')
-    assets_data = HTTParty.get("https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=#{symbols}&apikey=#{ENV['api_key']}")
+    if symbols.length != 0
+      assets_data = HTTParty.get("https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=#{symbols}&apikey=#{ENV['api_key']}")
+    end
 
     @formatted_data = JSON.parse(assets_data.body)["Stock Quotes"]
     if @formatted_data
