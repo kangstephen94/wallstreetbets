@@ -28,7 +28,7 @@ class WatchList extends React.Component  {
       <li key={idx} className="watchlist-item">
         <div className="watchlist-item-detail-symbol">{watchlistItem.symbol}</div>
         <div className="watchlist-item-detail">Watching</div>
-        <div className="watchlist-item-detail">${Number(data[watchlistItem.symbol]["2. price"])}</div>
+        <div className="watchlist-item-detail">${data[watchlistItem.symbol]["2. price"]}</div>
       </li>
     </Link>
     ));

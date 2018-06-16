@@ -31,7 +31,7 @@
   },
   "scripts": {
     "postinstall": "webpack --optimize-minimize",
-    "start": "webpack --watch"
+    "start": "webpack -d --watch"
   },
   "repository": {
     "type": "git",

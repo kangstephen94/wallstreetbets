@@ -40,18 +40,24 @@ class Portfolio extends React.Component {
       portfolioValue = payload.portfolio_value;
       total = buyingPower + portfolioValue;
       currentPrices = watchlist.data;
-      el = assets.map (asset => (
+      el = assets.map (asset => {
+        console.log(currentPrices);
+        console.log(asset);
+      if (asset.symbol && currentPrices[asset.symbol]) {
+        return (
         <Link to={`/assets/${asset.symbol}`}>
         <li className="holdings">
           <div className="holdings-asset">{asset.name}</div>
           <div className="holdings-asset">{asset.symbol}</div>
           <div className="holdings-asset">${asset.last_price}</div>
-          <div className="holdings-asset">${Number.parseFloat(currentPrices[asset.symbol]["2. price"])}</div>
+          <div className="holdings-asset">${currentPrices[asset.symbol]["2. price"]}</div>
           <div className="holdings-asset">{((((currentPrices[asset.symbol]["2. price"])/asset.last_price)-1)*100).toPrecision(2)}%</div>
           <div className="holdings-asset">{holdings2[asset.id]}</div>
         </li>
       </Link>
-      ));
+    );
+  }
+  });
     } else {
       el = <div>Loading...</div>;
     }

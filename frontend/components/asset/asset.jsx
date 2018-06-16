@@ -34,7 +34,6 @@ class Asset extends React.Component {
 
   componentWillUnmount () {
     this.props.clearData();
-    this.props.retrieveWatchlist();
   }
 
   componentDidMount () {
