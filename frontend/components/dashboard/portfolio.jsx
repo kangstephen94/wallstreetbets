@@ -50,7 +50,7 @@ class Portfolio extends React.Component {
           <div className="holdings-asset">{asset.name}</div>
           <div className="holdings-asset">{asset.symbol}</div>
           <div className="holdings-asset">${asset.last_price}</div>
-          <div className="holdings-asset">${currentPrices[asset.symbol]["2. price"]}</div>
+          <div className="holdings-asset">${(currentPrices[asset.symbol]["2. price"]).toPrecision(4)}</div>
           <div className="holdings-asset">{((((currentPrices[asset.symbol]["2. price"])/asset.last_price)-1)*100).toPrecision(2)}%</div>
           <div className="holdings-asset">{holdings2[asset.id]}</div>
         </li>
