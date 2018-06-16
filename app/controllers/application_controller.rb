@@ -34,7 +34,6 @@ class ApplicationController < ActionController::Base
   end
 
   def valid_sell?(asset_ownership)
-    return true if asset_ownership.side == "Buy"
     trade_asset_id = asset_ownership.asset_id
     @total_stocks_available = AssetOwnership.where(asset_id: trade_asset_id)
     @total = 0

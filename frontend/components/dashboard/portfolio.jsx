@@ -31,7 +31,8 @@ class Portfolio extends React.Component {
     let el;
     let total='100000';
     let currentPrices;
-    if ((payload && !Number.isInteger(payload)) && (!this.isEmpty(watchlist)))
+
+    if (payload && !Number.isInteger(payload))
     {
       assets = Object.values(payload.assets);
       holdings = Object.values(payload.holdings);
@@ -43,20 +44,16 @@ class Portfolio extends React.Component {
       el = assets.map (asset => {
         console.log(currentPrices);
         console.log(asset);
-      if (asset.symbol && currentPrices[asset.symbol]) {
         return (
         <Link to={`/assets/${asset.symbol}`}>
         <li className="holdings">
           <div className="holdings-asset">{asset.name}</div>
           <div className="holdings-asset">{asset.symbol}</div>
           <div className="holdings-asset">${asset.last_price}</div>
-          <div className="holdings-asset">${(currentPrices[asset.symbol]["2. price"]).toPrecision(4)}</div>
-          <div className="holdings-asset">{((((currentPrices[asset.symbol]["2. price"])/asset.last_price)-1)*100).toPrecision(2)}%</div>
           <div className="holdings-asset">{holdings2[asset.id]}</div>
         </li>
       </Link>
     );
-  }
   });
     } else {
       el = <div>Loading...</div>;
@@ -79,8 +76,6 @@ class Portfolio extends React.Component {
       <div className="holdings-title">Company</div>
       <div className="holdings-title">Symbol</div>
       <div className="holdings-title">Purchase Price</div>
-      <div className="holdings-title">Current Price</div>
-      <div className="holdings-title">Percent Gain/Loss</div>
       <div className="holdings-title">Shares</div>
       </li>
         {el}

@@ -23,15 +23,18 @@ class WatchList extends React.Component  {
     const {payload} = this.props;
     if ( payload && Object.keys(payload).length > 1) {
       const data = payload.data;
-    el = Object.values(payload.watchlist).map ( (watchlistItem,idx) => (
+    el = Object.values(payload.watchlist).map ( (watchlistItem,idx) => {
+      const currentPrice = parseFloat(data[watchlistItem.symbol]["2. price"]);
+      return (
       <Link key={idx} to={`/assets/${watchlistItem.symbol}`}>
       <li key={idx} className="watchlist-item">
         <div className="watchlist-item-detail-symbol">{watchlistItem.symbol}</div>
         <div className="watchlist-item-detail">Watching</div>
-        <div className="watchlist-item-detail">${(data[watchlistItem.symbol]["2. price"]).toPrecision(4)}</div>
+        <div className="watchlist-item-detail">${currentPrice.toPrecision(4)}</div>
       </li>
     </Link>
-    ));
+  );
+  });
   }
     return (
       <ul className="watchlist">

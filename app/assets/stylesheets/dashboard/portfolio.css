@@ -31,6 +31,7 @@
   color:white;
   margin: auto;
   margin-top: 30px;
+  margin-left: 190px;
   box-shadow: 0.2px 0.2px 15px 0.7px black;
   font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
@@ -51,7 +52,7 @@
 .piecharts {
   display:flex;
   margin: auto;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 
 body {
