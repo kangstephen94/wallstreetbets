@@ -8,11 +8,16 @@
   vertical-align: middle;
 }
 
+
+@media screen and (max-width: 1680px) {
+  .dash-nav { width:100vw; }
+}
+
 .dash-nav-content {
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 65%;
+  width: 65vw;
 }
 
 
