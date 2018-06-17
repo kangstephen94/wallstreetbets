@@ -1,11 +1,13 @@
 import merge from 'lodash/merge';
-import {UPDATE_POINTED_PRICE} from '../actions/custom_tool_tip_actions';
+import {UPDATE_POINTED_PRICE, CLEAR_POINTED_PRICE} from '../actions/custom_tool_tip_actions';
 
-const customToolTipReducer = (state = {}, action) => {
+const customToolTipReducer = (state = null, action) => {
   Object.freeze(state);
   switch (action.type) {
     case UPDATE_POINTED_PRICE:
-      return merge({}, state, {pointedPrice: action.pointedPrice});
+      return action.pointedPrice;
+    case CLEAR_POINTED_PRICE:
+      return null;
     default:
       return state;
   }

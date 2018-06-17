@@ -17,14 +17,25 @@ class PriceData extends React.Component {
    }
  }
 
+ componentWillUnmount () {
+   this.setState({pointedPrice: null});
+ }
+
 
  changeFormatter(startPrice){
-
-   var change = (this.props.pointedPrice - startPrice).toPrecision(3);
+   let change;
+   let percentchange;
+  if (this.props.pointedPrice === null) {
+    change = (this.props.endPrice - startPrice).toPrecision(3);
+    percentchange = (((this.props.endPrice - startPrice)/startPrice)*100).toPrecision(3);
+  }
+  else {
+    change = (this.props.pointedPrice - startPrice).toPrecision(3);
+    percentchange = (((this.props.pointedPrice - startPrice)/startPrice)*100).toPrecision(3);
+  }
    if (change < 0) {
      change = '-$' + change.toString().slice(1);
    }else {change = '+$' + change;}
-   var percentchange = (((this.props.pointedPrice - startPrice)/startPrice)*100).toPrecision(3);
    return   `${change} (${percentchange}%)`;
  }
 
@@ -36,7 +47,7 @@ class PriceData extends React.Component {
    return (
      <div>
        <p className="pointed_price"  >{ '$' + (this.props.pointedPrice  || endPrice ) }</p>
-       <p className="price_change">{ this.changeFormatter(this.props.startPrice) || (startPrice/endPrice).toPrecision(4)}</p>
+       <p className="price_change">{ this.changeFormatter(this.props.startPrice)}</p>
      </div>
    );
  }

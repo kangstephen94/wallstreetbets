@@ -26,14 +26,10 @@ class Asset extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if (this.props.match.params.sym !== nextProps.match.params.sym) {
-      this.props.clearData();
       this.setState({func: 'TIME_SERIES_1D'});
       this.props.retrieveAsset(nextProps.match.params.sym);
+      this.props.clearPointedPrice();
     }
-  }
-
-  componentWillUnmount () {
-    this.props.clearData();
   }
 
   componentDidMount () {

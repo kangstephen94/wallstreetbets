@@ -14,6 +14,7 @@ class AssetChart extends React.Component {
 
  componentWillReceiveProps (nextProps) {
    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+     this.props.clearData();
    this.props.retrieveData(nextProps.match.params.sym, 'TIME_SERIES_1D');
  }
  }
