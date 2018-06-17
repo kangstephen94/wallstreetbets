@@ -18,8 +18,7 @@ class NavBar extends React.Component {
 
   handleClick (e) {
     e.preventDefault();
-    console.log(e.target);
-    console.log(this.props);
+    this.props.clearHoldings();
     this.props.logout();
   }
 

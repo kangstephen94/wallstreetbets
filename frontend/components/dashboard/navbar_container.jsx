@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { clearAsset } from '../../actions/asset_actions';
+import { clearHoldings } from '../../actions/portfolio_actions';
 import NavBar from './navbar';
 
 const msp = state => ({
@@ -10,7 +11,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   logout: () => dispatch(logout()),
-  clearAsset: () => dispatch(clearAsset())
+  clearAsset: () => dispatch(clearAsset()),
+  clearHoldings: () => dispatch(clearHoldings())
 });
 
 export default connect(msp, mdp)(NavBar);
