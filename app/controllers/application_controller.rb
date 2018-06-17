@@ -34,10 +34,12 @@ class ApplicationController < ActionController::Base
   end
 
   def valid_sell?(asset_ownership)
+    portfolio = Portfolio.find(current_user.id)
+    stock_ownerships = portfolio.asset_ownerships
     trade_asset_id = asset_ownership.asset_id
-    @total_stocks_available = AssetOwnership.where(asset_id: trade_asset_id)
     @total = 0
-    @total_stocks_available.each do |asset_ownership|
+    stock_ownerships.each do |stock_ownership|
+      next if stock_ownership.asset_id != trade_asset_id
       if asset_ownership.side == "Buy"
         @total += asset_ownership.amount
       else
