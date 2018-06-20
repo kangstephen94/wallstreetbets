@@ -56,7 +56,7 @@ class Portfolio extends React.Component {
     );
   });
     } else {
-      el = <div>Loading...</div>;
+      el = <div>Search and buy stocks!</div>;
     }
 
 
