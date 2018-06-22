@@ -3,6 +3,10 @@
   background-color: #1b1b1d;
   margin: auto;
   width: 70%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 
