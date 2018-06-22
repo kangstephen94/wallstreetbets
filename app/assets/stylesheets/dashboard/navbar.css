@@ -1,11 +1,8 @@
 .dash-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
   z-index: 1;
   background-color: #1b1b1d;
-  vertical-align: middle;
+  margin: auto;
+  width: 70%;
 }
 
 
@@ -13,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 65%;
 }
 
 
@@ -22,33 +18,23 @@
   height: 120px;
 }
 
-.currentuser:hover {
-  color: #1ae9aa;
-  background-color: transparent;
-}
 
 .nav-links {
+  color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 13.1px;
   font-family: "DIN Web", "Hiragino Sans GB", STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif;
   font-weight: 900;
-}
-
-.nav-links li {
-  color: white;
-  padding: 30px;
+  align-items: center;
 }
 
 #dash-icon {
-  padding: 0px;
-  position: absolute;
   left: 150px;
 }
 
 #currentuser {
-  margin-right: 30px;
-  width: 102px;
+  margin-right: 25px;
 }
 
 

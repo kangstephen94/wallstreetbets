@@ -45,16 +45,16 @@ class NavBar extends React.Component {
     return (
         <div className="dash-nav">
           <div className="dash-nav-content">
-          <ul className="nav-links">
-            <li id="dash-icon">
-              <Link to='/'>
+          <div id="dash-icon">
+            <Link to='/'>
               <img id="my-img" src='https://image.ibb.co/gzyVF8/wallstreet.png' onMouseOver={this.hover} onMouseOut={this.unhover} />
             </Link>
-          </li>
-            <li className='search-container' onClick={this.handleModalClick}>
-              <SearchBarContainer />
-            <SearchResults searchResults={searchResults}/>
-            </li>
+          </div>
+          <div className='search-container' onClick={this.handleModalClick}>
+            <SearchBarContainer />
+            <SearchResults searchResults={searchResults} />
+          </div>
+          <ul className="nav-links">
             <li id='currentuser'>{currentUser.first_name}</li>
             <li id='logout'><a href='' onClick={this.handleClick}>Logout</a></li>
           </ul>

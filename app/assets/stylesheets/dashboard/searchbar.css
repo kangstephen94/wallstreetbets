@@ -1,19 +1,16 @@
 .search-container {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
+  justify-content: center;
 }
 
 #search-bar {
-  display: block;
   background-color: #1b1b1d;
   color: white;
   padding-left: 10px;
   width: 450px;
   height: 28px;
   border: 0.6px solid white;
-  margin-right: 300px;
-  margin-left: 100px;
 }
 
 #search-bar:hover {

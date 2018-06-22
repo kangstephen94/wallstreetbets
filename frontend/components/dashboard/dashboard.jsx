@@ -26,7 +26,6 @@ class Dashboard extends React.Component {
       el = (
       <div className='dashboard'>
         <NavBarContainer />
-        <div className="empty-div"></div>
         <div className='port-watch-flex'>
         <PortfolioContainer />
         <WatchListContainer />

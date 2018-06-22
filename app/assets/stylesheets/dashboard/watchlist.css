@@ -36,7 +36,7 @@ body {
  .port-watch-flex {
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
+   justify-content: flex-start;
    background-color: #1b1b1d;
  }
 

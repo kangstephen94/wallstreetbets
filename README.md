@@ -1,7 +1,7 @@
 # Wallstreetbets
 
 ## Description
-Wallstreetbets is a stock trading platform that offers real-time data for companies in the NASDAQ market and allows users to mimic buying, selling, and keeping track of stocks.  As opposed to its counterparts such as Robinhood, it offers a fun, millenial-oriented theme to keep things fun and exciting.
+Wallstreetbets is a stock trading platform that offers real-time data for companies in the NASDAQ market and allows users to mimic buying, selling, and keeping track of stocks.  Theme based off the subreddit /r/wallstreetbets.
 
 ## Features
 * Secure frontend to backend user authentication using BCrypt.
@@ -11,11 +11,17 @@ Wallstreetbets is a stock trading platform that offers real-time data for compan
 * View portfolio value over time, current cash allocation, and holdings diversity.
 
 ## Technologies
-* Backend: Rails/ActiveRecord/PostgreSQL
+* Backend: Rails/ActiveRecord/PostgreSQL/jBuilder
 * Frontend: React/Redux
-* Recharts
-* httparty/figero
+* Recharts: Used to create interactive graphs on D3 Platform.
+* httparty: Allows for easier manipulation and access to data.
+* figaro: Secures private information utilized in backend (API Key).
 * Alphavantage API
+
+## 
+
+
+
 
 ## Future Plans
 * Create an algorithm that generates a diverse portfolio with maximized gains and minimized risk
