@@ -22,7 +22,7 @@ body {
   font-family: 'Encode Sans Semi Expanded', sans-serif;
   padding-top: 15px;
   position: fixed;
-  right: 175px;
+  right: 218px;
   top: 150px;
   min-width: 220px;
   overflow: auto;
@@ -38,6 +38,7 @@ body {
    flex-direction: row;
    justify-content: flex-start;
    background-color: #1b1b1d;
+   margin-left: 100px;
  }
 
 .empty-div {
