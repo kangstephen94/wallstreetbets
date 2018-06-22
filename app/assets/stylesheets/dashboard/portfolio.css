@@ -52,7 +52,7 @@
 .piecharts {
   display:flex;
   margin: auto;
-  padding-left: 100px;
+  justify-content: center;
 }
 
 body {
@@ -68,4 +68,8 @@ body {
 }
  #portfolio-total{
     color:white;
+ }
+
+ .portfolio {
+   margin-top: 130px;
  }
