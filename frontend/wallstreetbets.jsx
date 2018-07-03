@@ -13,10 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
   const store = configureStore(preloadedState);
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.createNewUser = createNewUser;
-  window.login = login;
-  window.logout = logout;
   ReactDOM.render(<Root store={store}/>, rootEl);
 });

@@ -33,10 +33,10 @@ input:hover::-webkit-input-placeholder {
   display:flex;
   flex-direction: column;
   background-color: #1b1b1d;
+  position: fixed;
   z-index: 1;
-  top: 60px;
+  top: 74px;
   width: 459px;
-  margin-left: 100px;
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
