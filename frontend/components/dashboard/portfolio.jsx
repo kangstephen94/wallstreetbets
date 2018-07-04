@@ -42,8 +42,6 @@ class Portfolio extends React.Component {
       total = buyingPower + portfolioValue;
       currentPrices = watchlist.data;
       el = assets.map (asset => {
-        console.log(currentPrices);
-        console.log(asset);
         return (
         <Link to={`/assets/${asset.symbol}`}>
         <li className="holdings">

@@ -26,7 +26,6 @@ class signupForm extends React.Component {
 
   hover () {
     const element = document.getElementById('my-img');
-    console.log(element);
     element.setAttribute('src', 'https://image.ibb.co/dt16oT/wallstreet_hover.png');
   }
 
