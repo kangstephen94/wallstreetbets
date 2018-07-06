@@ -54,10 +54,6 @@
   justify-content: center;
 }
 
-body {
-  margin: 0;
-}
-
 .total-assets {
   font-size: 38px;
   font-family: 'Encode Sans Semi Expanded', sans-serif;

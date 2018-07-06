@@ -40,8 +40,7 @@
 .watchlist-item {
   display: flex;
   flex-direction: row;
-  position: relative;
-  width: 100%
+  font-size: 13px;
 }
 
 .watchlist-item:hover {
@@ -56,14 +55,12 @@
 
 .watchlist-item-detail {
   padding: 20px 12px 20px 10px;
-  width: 35%;
-  font-size: 15px;
+  width: 33.3%;
 }
 
 
 .watchlist-item-detail-symbol {
   color: #f45531;
   padding: 20px 0px 20px 25px;
-  width: 35%;
-  font-size: 15px;
+  width: 33.3%;
 }

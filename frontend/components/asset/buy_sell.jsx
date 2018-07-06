@@ -136,6 +136,7 @@ class BuySell extends React.Component {
           >Sell {asset.symbol}
           </button>
       </div>
+      <div className="buy-sell-info">
       <form className="shares">
           <label htmlFor="amount">Shares</label>
             <input
@@ -150,6 +151,7 @@ class BuySell extends React.Component {
         <p className='last-price'>${asset.last_price}</p>
       </div>
       {el}
+      </div>
       <button onClick={this.handleSubmit} className="submit-order">Submit Order</button>
       {this.renderErrors()}
       {el2}

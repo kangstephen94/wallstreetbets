@@ -9,12 +9,13 @@
   color: white;
   padding-left: 10px;
   width: 450px;
-  height: 28px;
-  border: 0.6px solid white;
+  height: 40px;
+  border: 0.6px solid black;
+  border-radius: 5px;
 }
 
 #search-bar:hover {
-  -webkit-box-shadow: 0.5px 0.5px 3.5px 4px #ccc;
+  -webkit-box-shadow: 1.5px 1.5px 7px 2px black;
   transition: all 0.25s linear;
 }
 
@@ -22,11 +23,13 @@
 input::-webkit-input-placeholder {
     color: gray;
     font-size: 12px;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 input:hover::-webkit-input-placeholder {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     transition: all 0.25s linear;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 #search-result {
@@ -35,11 +38,11 @@ input:hover::-webkit-input-placeholder {
   background-color: #1b1b1d;
   position: fixed;
   z-index: 1;
-  top: 74px;
+  top: 79px;
   width: 459px;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 
@@ -48,9 +51,10 @@ input:hover::-webkit-input-placeholder {
   display: flex;
   justify-content: space-between;
   color: white;
-  font-size: 12px;
+  font-size: 13.5px;
   padding: 10px 10px;
   vertical-align: middle;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
 }
 
 #search-result li:hover {

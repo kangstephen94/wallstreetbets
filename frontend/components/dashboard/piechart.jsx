@@ -76,6 +76,7 @@ class TwoLevelPieChart extends React.Component{
         <p>Holdings Diversity</p>
     	<PieChart className="Piechart1" width={width} height={height}>
         <Pie
+          dataKey="value"
         	activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           data={data}

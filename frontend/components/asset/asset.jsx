@@ -83,9 +83,9 @@ class Asset extends React.Component {
       <div className="show-asset">
         <NavBarContainer />
         <div className="asset-content">
-          <h1 id="name">{name}</h1>
           <div className="buy-sell-flex">
             <div className="chart-container">
+              <h1 id="name">{name}</h1>
               {el2}
               <AssetChartContainer />
 
@@ -117,41 +117,39 @@ class Asset extends React.Component {
                   </li>
                 </ul>
               </div>
+              <ul className="asset-details1">
+                <li>
+                  <p className="title">Company:</p>
+                  <p>{name}</p>
+                </li>
+                <li>
+                  <p className="title">Symbol:</p>
+                  <p>{symbol}</p>
+                </li>
+                <li>
+                  <p className="title">Market Cap:</p>
+                  <p>{marketCap}</p>
+                </li>
+              </ul>
+
+              <ul className="asset-details2">
+                <li>
+                  <p className="title">IPO Year:</p>
+                  <p>{ipoYear}</p>
+                </li>
+                <li>
+                  <p className="title">Industry:</p>
+                  <p>{industry}</p>
+                </li>
+                <li>
+                  <p className="title">Sector:</p>
+                  <p>{sector}</p>
+                </li>
+              </ul>
 
             </div>
              {el}
           </div>
-
-          <ul className="asset-details1">
-            <li>
-              <p className="title">Company:</p>
-              <p>{name}</p>
-            </li>
-            <li>
-              <p className="title">Symbol:</p>
-              <p>{symbol}</p>
-            </li>
-            <li>
-              <p className="title">Market Cap:</p>
-              <p>{marketCap}</p>
-            </li>
-          </ul>
-
-          <ul className="asset-details2">
-              <li>
-                <p className="title">IPO Year:</p>
-                <p>{ipoYear}</p>
-              </li>
-              <li>
-                <p className="title">Industry:</p>
-                <p>{industry}</p>
-              </li>
-              <li>
-                <p className="title">Sector:</p>
-                <p>{sector}</p>
-              </li>
-          </ul>
-
         </div>
       </div>
     );

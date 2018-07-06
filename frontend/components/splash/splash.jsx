@@ -94,7 +94,7 @@ class Splash extends React.Component  {
 
       <section className='footer'>
         <div className='footer-container'>
-        <a href='https://www.linkedin.com/in/hyunkang7/' target='_blank'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/linkedin.png"/></a>
+        <a href='https://www.linkedin.com/in/kangstephen/' target='_blank'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/linkedin.png"/></a>
         <a href='https://github.com/kangstephen94' target='_blank'><img className='github' src="https://preview.ibb.co/gGXv08/github_green.png"/></a>
         <a href='https://twitter.com/skangbangg' target='_blank'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/twitter.png"/></a>
         <a href='https://www.facebook.com/stephen.kang1' target='_blank'><img className='linkedin' src="https://d2ue93q3u507c2.cloudfront.net/assets/marketing/images/social/facebook.png"/></a>

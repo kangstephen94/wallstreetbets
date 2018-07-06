@@ -23,7 +23,7 @@ class Portfolio extends React.Component {
   render () {
     const {payload, watchlist} = this.props;
     let buyingPower;
-    let portfolioValue;
+    let portfolioValue = 0;
     let assetIds;
     let holdings;
     let assets;
@@ -38,13 +38,17 @@ class Portfolio extends React.Component {
       holdings = Object.values(payload.holdings);
       holdings2 = payload.holdings2;
       buyingPower = payload.buying_power;
-      portfolioValue = payload.portfolio_value;
+
+      assets.forEach ( asset => {
+        portfolioValue += asset.last_price * payload.holdings2[asset.id]
+      });
+
       total = buyingPower + portfolioValue;
       currentPrices = watchlist.data;
-      el = assets.map (asset => {
+      el = assets.map ((asset,idx) => {
         return (
-        <Link to={`/assets/${asset.symbol}`}>
-        <li className="holdings">
+          <Link key={idx} to={`/assets/${asset.symbol}`}>
+        <li key={idx} className="holdings">
           <div className="holdings-asset">{asset.name}</div>
           <div className="holdings-asset">{asset.symbol}</div>
           <div className="holdings-asset">${asset.last_price}</div>

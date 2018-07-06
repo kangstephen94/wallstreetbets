@@ -40,7 +40,8 @@ class AssetChart extends React.Component {
    }
   else {
     data = Object.values(this.props.data.data);
-    endPrice = data[Object.keys(data).length-1].value;
+    endPrice = data[data.length-1].value;
+    console.log(data);
     startPrice = data[0].value;
     difference = startPrice - endPrice;
     difference >= 0 ? color = "#f45531" : color = '#21ce99';

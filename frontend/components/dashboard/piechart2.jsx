@@ -80,6 +80,7 @@ class TwoLevelPieChart extends React.Component{
         <p>Cash Allocation</p>
     	<PieChart className="Piechart2" width={width} height={height}>
         <Pie
+          dataKey="value"
         	activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           data={data}
