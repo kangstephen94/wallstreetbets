@@ -43,7 +43,7 @@ class Portfolio extends React.Component {
         portfolioValue += asset.last_price * payload.holdings2[asset.id]
       });
 
-      total = buyingPower + portfolioValue;
+      total = buyingPower + Math.round(portfolioValue);
       currentPrices = watchlist.data;
       el = assets.map ((asset,idx) => {
         return (
