@@ -18,7 +18,66 @@ Wallstreetbets is a stock trading platform that offers real-time data for compan
 * figaro: Secures private information utilized in backend (API Key).
 * Alphavantage API
 
-## 
+## Features
+
+### Dashboard
+After logging in, users can view key portfolio performance metrics on their personal dashboard. The users can view their watchlisted assets that have their current price updated every 25 seconds.  Users can also keep track of their portfolio, and view the distribution of their assets on an interactive piechart.  
+
+Users can also view an index of all assets on the platform as well as their current holdings and watched assets in a sticky sidebar.
+
+![](https://media.giphy.com/media/dJiJiJvvG3w686OuaZ/giphy.gif)
+
+### Asset Research and Trade
+When navigating to an individual asset page, users can conduct basic research and make trades.
+ * Asset price history is displayed in 1D, 1W, 1M, 1Y intervals on an interactive graph for better data visualization.
+ * Users can buy and sell the asset stocks at real-time market prices.
+ * Users can add the asset to their watchlist to track their real-time prices on the dashboard.
+
+![](https://media.giphy.com/media/443D1tfGvh0cNwPtsw/giphy.gif)
+
+## Code Samples
+
+### Searchbar
+Users can query for assets in the database (contains all NASDAQ listed companies) either by the name or symbol of the asset. Here is a code snippet of that implementation below.
+
+```javascript
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {query: ''};
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.match.params.sym !== nextProps.match.params.sym) {
+      this.setState({query: ''});
+    }
+  }
+
+  handleChange (e) {
+    this.setState({query: e.target.value}, () => {
+      if (this.state.query === '') {
+        this.props.clearAssets();
+      } else {
+      this.props.searchAssets(this.state.query);
+    }
+    }
+  );
+  }
+
+  render () {
+    return (
+      <input
+        id='search-bar'
+        onChange={this.handleChange}
+        value={this.state.query}
+        placeholder='Search'
+        />
+    );
+  }
+}
+```
+
 
 
 
