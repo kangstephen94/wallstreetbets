@@ -20,7 +20,9 @@ Wallstreetbets is a stock trading platform that offers real-time data for compan
 * figaro: Secures private information utilized in backend (API Key).
 * Alphavantage API
 
-## Features
+## Database Schema
+![](https://res.cloudinary.com/dcy8box3u/image/upload/v1531161713/Screen_Shot_2018-07-09_at_11.38.23_AM.png)
+## Demo
 
 ### Dashboard
 After logging in, users can view key portfolio performance metrics on their personal dashboard. The users can view their watchlisted assets that have their current price updated every 25 seconds.  Users can also keep track of their portfolio, and view the distribution of their assets on an interactive piechart.  
