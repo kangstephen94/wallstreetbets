@@ -1,5 +1,7 @@
 # Wallstreetbets
 
+[See it Live!](http://wallstreetbets2.herokuapp.com/#/)
+
 ## Description
 Wallstreetbets is a stock trading platform that offers real-time data for companies in the NASDAQ market and allows users to mimic buying, selling, and keeping track of stocks.  Theme based off the subreddit /r/wallstreetbets.
 
