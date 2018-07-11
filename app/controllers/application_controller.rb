@@ -40,10 +40,10 @@ class ApplicationController < ActionController::Base
     @total = 0
     stock_ownerships.each do |stock_ownership|
       next if stock_ownership.asset_id != trade_asset_id
-      if asset_ownership.side == "Buy"
-        @total += asset_ownership.amount
+      if stock_ownership.side == "Buy"
+        @total += stock_ownership.amount
       else
-        @total -= asset_ownership.amount
+        @total -= stock_ownership.amount
       end
     end
     @total >= asset_ownership.amount ?  true : false
