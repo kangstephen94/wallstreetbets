@@ -17,9 +17,8 @@
 
 .signupcontainer {
   display: block;
-  height: 371px;
-  margin-left: 70px;
-  margin-top: 200px;
+  height: 40%;
+  margin: auto;
 }
 .signuptitle {
   display: flex;
